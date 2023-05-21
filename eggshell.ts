@@ -101,11 +101,11 @@ const exists = async (filename: string): Promise<boolean> => {
 
 async function findRecording(pids: number[]): Promise<string | null> {
   for (const pid of pids) {
-    // checks if $HOME/aiterminal/.recordings/$pids exists
+    // checks if $HOME/eggshell/.recordings/$pids exists
 
     const recordingPath = `${Deno.env.get(
       "HOME"
-    )}/aiterminal/.recordings/${pid}.txt`;
+    )}/eggshell/.recordings/${pid}.txt`;
 
     if (await exists(recordingPath)) {
       return recordingPath;
@@ -134,7 +134,7 @@ async function getSession(recordingPath: string) {
   }
   const sessionPath = `${Deno.env.get(
     "HOME"
-  )}/aiterminal/.recordings/.session_${pid}`;
+  )}/eggshell/.recordings/.session_${pid}`;
 
   const sessionExists = await exists(sessionPath);
   if (!sessionExists) {
@@ -163,7 +163,7 @@ async function forgetSession(recordingPath: string) {
   }
   const sessionPath = `${Deno.env.get(
     "HOME"
-  )}/aiterminal/.recordings/.session_${pid}`;
+  )}/eggshell/.recordings/.session_${pid}`;
 
   //set anchor to be the index of the last line of the session
   const sessionFile = await Deno.readTextFile(sessionPath);

@@ -11,7 +11,7 @@ pid=$$
 found=0
 
 while [ $pid -ne 1 ]; do
-  if [ -e "$HOME/aiterminal/.recordings/$pid.txt" ]; then
+  if [ -e "$HOME/eggshell/.recordings/$pid.txt" ]; then
     found=1
     break
   fi
@@ -19,5 +19,5 @@ while [ $pid -ne 1 ]; do
 done
 
 if [ $found -eq 0 ]; then
-  script -fq $HOME/aiterminal/.recordings/$$.txt
+  script -fq $HOME/eggshell/.recordings/$$.txt
 fi
