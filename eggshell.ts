@@ -188,7 +188,7 @@ async function handler() {
     return;
   }
 
-  const isReset = Deno.args[0] === "-r" && Deno.args.length === 1;
+  const isReset = Deno.args[0] === "-c" && Deno.args.length === 1;
 
   if (isReset) {
     await forgetSession(recordingPath);
