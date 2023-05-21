@@ -115,16 +115,68 @@ async function findRecording(pids: number[]): Promise<string | null> {
   return Promise.resolve(null);
 }
 
+function pidFromRecording(recording: string): string | null {
+  const pid = recording.split("/").pop()?.split(".")[0];
+  return pid ?? null;
+}
+
 async function recordingFromPath(recordingPath: string) {
   const text = await Deno.readTextFile(recordingPath);
-
-  await Deno.writeTextFile("./test.txt", stripColor(text));
   return stripColor(text);
 }
 
-//OUTPUT HELPER
+// SESSION MANAGEMENT
 
-//HANDLER
+async function getSession(recordingPath: string) {
+  const pid = pidFromRecording(recordingPath);
+  if (!pid) {
+    return;
+  }
+  const sessionPath = `${Deno.env.get(
+    "HOME"
+  )}/aiterminal/.recordings/.session_${pid}`;
+
+  const sessionExists = await exists(sessionPath);
+  if (!sessionExists) {
+    await Deno.create(sessionPath);
+    await Deno.writeTextFile(sessionPath, JSON.stringify({ anchor: 0 }), {
+      create: true,
+    });
+  }
+  const sessionFile = await Deno.readTextFile(sessionPath);
+  const session = JSON.parse(sessionFile);
+
+  const recording = await recordingFromPath(recordingPath)
+
+  const recordingLines = recording.split("\n");
+
+  return {
+    anchor: session.anchor,
+    lines: recordingLines.slice(session.anchor),
+  };
+}
+
+async function forgetSession(recordingPath: string) {
+  const pid = pidFromRecording(recordingPath);
+  if (!pid) {
+    return;
+  }
+  const sessionPath = `${Deno.env.get(
+    "HOME"
+  )}/aiterminal/.recordings/.session_${pid}`;
+
+  //set anchor to be the index of the last line of the session
+  const sessionFile = await Deno.readTextFile(sessionPath);
+  const session = JSON.parse(sessionFile);
+
+  const recording = await Deno.readTextFile(recordingPath);
+
+  const recordingLines = recording.split("\n");
+
+  session.anchor = recordingLines.length;
+
+  await Deno.writeTextFile(sessionPath, JSON.stringify(session), {});
+}
 
 async function handler() {
   const currentPid = Deno.pid;
@@ -132,14 +184,23 @@ async function handler() {
 
   const recordingPath = await findRecording(ancestorPids);
 
-  let recording = null;
-
-  if (recordingPath) {
-    recording = await recordingFromPath(recordingPath);
+  if (!recordingPath) {
+    return;
   }
 
+  const isReset = Deno.args[0] === "--r" && Deno.args.length === 1;
+
+  if (isReset) {
+    await forgetSession(recordingPath);
+    return;
+  }
+
+  const session = await getSession(recordingPath);
   const prompt = Deno.args.join(" ");
-  const generatedCommand = await fetchGeneratedCommand(prompt, recording);
+  const generatedCommand = await fetchGeneratedCommand(
+    prompt,
+    session?.lines.join("\n") ?? ""
+  );
 
   if (generatedCommand.length > 120 && !generatedCommand.startsWith("echo")) {
     console.log(generatedCommand);
