@@ -104,8 +104,8 @@ async function findRecording(pids: number[]): Promise<string | null> {
     // checks if $HOME/eggshell/.recordings/$pids exists
 
     const recordingPath = `${Deno.env.get(
-      "HOME"
-    )}/eggshell/.recordings/${pid}.txt`;
+      "EGGSHELL_PATH"
+    )}/.recordings/${pid}.txt`;
 
     if (await exists(recordingPath)) {
       return recordingPath;
@@ -133,8 +133,8 @@ async function getSession(recordingPath: string) {
     return;
   }
   const sessionPath = `${Deno.env.get(
-    "HOME"
-  )}/eggshell/.recordings/.session_${pid}`;
+    "EGGSHELL_PATH"
+  )}/.recordings/.session_${pid}`;
 
   const sessionExists = await exists(sessionPath);
   if (!sessionExists) {
@@ -146,7 +146,7 @@ async function getSession(recordingPath: string) {
   const sessionFile = await Deno.readTextFile(sessionPath);
   const session = JSON.parse(sessionFile);
 
-  const recording = await recordingFromPath(recordingPath)
+  const recording = await recordingFromPath(recordingPath);
 
   const recordingLines = recording.split("\n");
 
@@ -162,8 +162,8 @@ async function forgetSession(recordingPath: string) {
     return;
   }
   const sessionPath = `${Deno.env.get(
-    "HOME"
-  )}/eggshell/.recordings/.session_${pid}`;
+    "EGGSHELL_PATH"
+  )}/.recordings/.session_${pid}`;
 
   //set anchor to be the index of the last line of the session
   const sessionFile = await Deno.readTextFile(sessionPath);
