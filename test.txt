@@ -1,0 +1,7 @@
+Script started on 2023-05-21 20:45:18+02:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="165" LINES="25"]
+hristian@christian-thinkpad-13: ~/github/eggshellchristian@christian-thinkpad-13:~/github/eggshell$ deno run -A ai_terminal.ts list filesls
+ai_terminal.ts  deno.jsonc  deno.lock  README.md  shelly.sh
+hristian@christian-thinkpad-13: ~/github/eggshellchristian@christian-thinkpad-13:~/github/eggshell$ q list files
+hristian@christian-thinkpad-13: ~/github/eggshellchristian@christian-thinkpad-13:~/github/eggshell$ q list files
+hristian@christian-thinkpad-13: ~/github/eggshellchristian@christian-thinkpad-13:~/github/eggshell$ q list files
+hristian@christian-thinkpad-13: ~/github/eggshellchristian@christian-thinkpad-13:~/github/eggshell$ q list files

@@ -1,4 +1,5 @@
 import { writeText } from "https://deno.land/x/copy_paste@v1.1.3/mod.ts";
+import { stripColor } from "https://deno.land/std@0.187.0/fmt/colors.ts";
 
 const apiKey = Deno.env.get("OPENAI_API_KEY");
 
@@ -114,20 +115,11 @@ async function findRecording(pids: number[]): Promise<string | null> {
   return Promise.resolve(null);
 }
 
-// SESSION FROM RECORDING
-function removeAnsiEscapeCodes(str: string): string {
-  return (
-    str
-      // deno-lint-ignore no-control-regex
-      .replace(/\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])/g, "")
-      // deno-lint-ignore no-control-regex
-      .replace(/\x1b\[[0-9;]*[a-zA-Z]/g, "")
-  );
-}
-
 async function recordingFromPath(recordingPath: string) {
   const text = await Deno.readTextFile(recordingPath);
-  return removeAnsiEscapeCodes(text);
+
+  await Deno.writeTextFile("./test.txt", stripColor(text));
+  return stripColor(text);
 }
 
 //OUTPUT HELPER
