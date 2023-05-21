@@ -1,15 +1,11 @@
 import { writeText } from "https://deno.land/x/copy_paste@v1.1.3/mod.ts";
 
-type Message = { role: "user" | "assistant" | "system"; content: string };
-
 const apiKey = Deno.env.get("OPENAI_API_KEY");
-console.log(apiKey);
 
 async function fetchGeneratedCommand(
   prompt: string,
   recording: string | null
 ): Promise<string> {
-
   const messages = [
     {
       role: "system",
@@ -52,6 +48,7 @@ async function fetchGeneratedCommand(
 // RECORDING MANAGEMENT
 async function getParentPid(pid: number): Promise<number | null> {
   try {
+    // deno-lint-ignore no-deprecated-deno-api
     const process = Deno.run({
       cmd: ["ps", "-o", "ppid=", "-p", `${pid}`],
       stdout: "piped",
