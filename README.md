@@ -46,16 +46,14 @@ cd eggshell
 deno install -A --name=q ./eggshell.ts
 ```
 
-2. Add eggshell .recordings directory. The .recordings dir is ignored in the .gitignore file.
-```shell
-mkdir <absolute-path-to-git-repo>/.recordings
-```
-
 2. Setup bashrc. This will then automatically create a eggshell session when opening a CLI.
 ```shell
-echo "source <absolute-path-to-git-repo>/shelly.sh" >> $HOME/.bashrc
-echo "OPENAI_API_KEY=<your-openai-api-key> $HOME/.bashrc
+echo "EGGSHELL_PATH=<absolute-path-to-git-repo" >> $HOME/.bashrc
+echo "source $EGGSHELL_PATH/shelly.sh" >> $HOME/.bashrc
+echo "OPENAI_API_KEY=<your-openai-api-key>" >> $HOME/.bashrc
 ```
+
+Now you are good to go!
 
 
 ## Implementation
