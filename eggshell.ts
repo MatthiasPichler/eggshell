@@ -165,6 +165,14 @@ async function forgetSession(recordingPath: string) {
     "EGGSHELL_PATH"
   )}/.recordings/.session_${pid}`;
 
+  const sessionExists = await exists(sessionPath);
+  if (!sessionExists) {
+    await Deno.create(sessionPath);
+    await Deno.writeTextFile(sessionPath, JSON.stringify({ anchor: 0 }), {
+      create: true,
+    });
+  }
+
   //set anchor to be the index of the last line of the session
   const sessionFile = await Deno.readTextFile(sessionPath);
   const session = JSON.parse(sessionFile);
@@ -175,7 +183,7 @@ async function forgetSession(recordingPath: string) {
 
   session.anchor = recordingLines.length;
 
-  await Deno.writeTextFile(sessionPath, JSON.stringify(session), {});
+  await Deno.writeTextFile(sessionPath, JSON.stringify(session));
 }
 
 async function handler() {
