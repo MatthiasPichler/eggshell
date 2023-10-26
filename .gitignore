@@ -1,1 +1,26 @@
-.recordings
+# Byte-compiled / optimized Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Caches and log files
+.cache/
+*.log
+
+# Virtual environment
+.venv/
+
+# Local configuration files
+*.local
+*.db
+*.sqlite3
+
+# Compiled Python files
+*.pyc
+
+# Package distribution
+dist/
+build/
+
+.recording
