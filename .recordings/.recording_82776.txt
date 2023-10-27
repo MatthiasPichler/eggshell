@@ -1,655 +1,0 @@
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32ml[39m[32ml[32ms[39m [4m/[24m[24m [32ml[39m[39m [39m [32ml[39m[32ml[32ms[39m[?1l>[?2004l
-+]2;ls -G]1;lsLICENSE          README.md        [1m[36meggshell[39;49m[0m         [31meggshell.sh[39;49m[0m      requirements.txt setup.py
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[1m[31m+[0m[39m[0m[39m [32mp[39m[1m[31mp[1m[31my[0m[39m[1m[31mp[1m[31my[1m[31mt[0m[39m[1m[31mt[1m[31mh[0m[39m[1m[31mh[1m[31mo[0m[39m[0m[32mp[0m[32my[0m[32mt[0m[32mh[0m[32mo[32mn[39m[32mn[32m3[39m m [4me[24m[4me[4mg[24m[4mg[4mg[24m[4mg[4mshell[1m[4m/[0m[24m[0m[4m/[4mm[24m[4mm[4ma[24m[4ma[4min.py[24m[1m [0m[0m [?1l>[?2004l
-]2;python3 eggshell/main.py]1;python3Traceback (most recent call last):
-  File "/Users/matthias/Documents/private/eggshell/eggshell/main.py", line 2, in <module>
-    import eggshell.eggshell as eggshell
-  File "/Users/matthias/Documents/private/eggshell/eggshell/eggshell.py", line 3, in <module>
-    from eggshell import ai
-ImportError: cannot import name 'ai' from partially initialized module 'eggshell' (most likely due to a circular import) (/Users/matthias/Documents/private/eggshell/eggshell/eggshell.py)
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m [4meggshell/main.py[24m[?1l>[?2004l
-]2;python3 eggshell/main.py]1;python3Traceback (most recent call last):
-  File "/Users/matthias/Documents/private/eggshell/eggshell/main.py", line 2, in <module>
-    import eggshell.eggshell as eggshell
-  File "/Users/matthias/Documents/private/eggshell/eggshell/eggshell.py", line 3, in <module>
-    import eggshell.ai as ai
-ModuleNotFoundError: No module named 'eggshell.ai'; 'eggshell' is not a package
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m [4meggshell/main.py[24m[?1l>[?2004l
-]2;python3 eggshell/main.py]1;python3Traceback (most recent call last):
-  File "/Users/matthias/Documents/private/eggshell/eggshell/main.py", line 2, in <module>
-    import eggshell.eggshell as eggshell
-  File "/Users/matthias/Documents/private/eggshell/eggshell/eggshell.py", line 3, in <module>
-    import eggshell.generate as generate
-ModuleNotFoundError: No module named 'eggshell.generate'; 'eggshell' is not a package
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m eggshell/main.pymain.py [8Dmain.py [8Dmain.py [8Dmain.py [8Dmain.py [8Dmain.py [8Dmain.py [8Dmain.py [8D[4mm[4ma[4mi[4mn[4m.[4mp[4my[24m [8D[?1l>[?2004l
-]2;python3 main.py]1;python3Traceback (most recent call last):
-  File "/Users/matthias/Documents/private/eggshell/main.py", line 2, in <module>
-    import eggshell.eggshell as eggshell
-  File "/Users/matthias/Documents/private/eggshell/eggshell/eggshell.py", line 4, in <module>
-    import eggshell.recordings as recordings
-  File "/Users/matthias/Documents/private/eggshell/eggshell/recordings.py", line 3, in <module>
-    from ansicolors import strip_color
-ModuleNotFoundError: No module named 'ansicolors'
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[4ms[24m[24m[1m[31ms[1m[31mo[0m[39m[1m[31ms[1m[31mo[1m[31mu[0m[39m[1m[31mu[1m[31mr[0m[39m[1m[31mr[1m[31mc[0m[39m[0m[32ms[0m[32mo[0m[32mu[0m[32mr[0m[32mc[32me[39m 
-zsh: do you wish to see all 3456 possibilities (1152 lines)? n[J[A[0m[27m[24m[2C[32msource[39m[K[131C [01;37m[[01;34m33d0d60[01;37m][00m[140D[4m.[24m[4m.[4mv[24m[24m.[24mv
-[J[J[1;31m.venv[0m/    [J[1;31m.vscode[0m/[J[A[0m[27m[24m[2C[32msource[39m .v[K[128C [01;37m[[01;34m33d0d60[01;37m][00m[138Denv[1m/[0m
-[J[7m.venv/  [0m  [J[1;31m.vscode[0m/[J[A[0m[27m[24m[2C[32msource[39m .venv[1m/[0m[K[124C [01;37m[[01;34m33d0d60[01;37m][00m[134D
-[7m.venv/  [0m  [7m.venv/  [0m  [A[0m[27m[24m[2C[32msource[39m .venv[1m/[0m[K[124C [01;37m[[01;34m33d0d60[01;37m][00m[134D
-[J[A[15C[4m.[4mv[4me[4mn[4mv[1m[4m/[0m[24m[24m.[24mv[24me[24mn[24mv[0m[24m/
-[J[J[1;31mbin[0m/        [J[1;31minclude[0m/    [J[1;31mlib[0m/        [Jpyvenv.cfg[J[A[0m[27m[24m[2C[32msource[39m .venv/[K[124C [01;37m[[01;34m33d0d60[01;37m][00m[134Dbin[1m/[0m
-[J[7mbin/      [0m  [J[1;31minclude[0m/    [J[1;31mlib[0m/        [Jpyvenv.cfg[J[A[0m[27m[24m[2C[32msource[39m .venv/bin[1m/[0m[K[120C [01;37m[[01;34m33d0d60[01;37m][00m[130D
-[7mbin/      [0m  [7mbin/      [0m  [A[0m[27m[24m[2C[32msource[39m .venv/bin[1m/[0m[K[120C [01;37m[[01;34m33d0d60[01;37m][00m[130D
-[J[A[19C[10D[4m.[4mv[4me[4mn[4mv[4m/[4mb[4mi[4mn[1m[4m/[0m[24m[10D[24m.[24mv[24me[24mn[24mv[24m/[24mb[24mi[24mn[0m[24m/
-[J[0mActivate.ps1   activate.csh   [1;32mnormalizer[0m*    [1;32mpip[0m*           [1;32mpip3.11[0m*       [1;36mpython3[0m@       [1;32mruff[0m*                                                 
-[Jactivate       [Jactivate.fish  [J[1;32mopenai[0m*        [J[1;32mpip3[0m*          [J[1;36mpython[0m@        [J[1;36mpython3.11[0m@    [J[1;32mtqdm[0m*          [J                                       [A[A[0m[27m[24m[2C[32msource[39m .venv/bin/[K[120C [01;37m[[01;34m33d0d60[01;37m][00m[130DActivate.ps1
-[7mActivate.ps1 [0m  activate.csh   [1;32mnormalizer[0m*    [1;32mpip[0m*           [1;32mpip3.11[0m*       [1;36mpython3[0m@       [1;32mruff[0m*                                                 [K
-[Jactivate       [Jactivate.fish  [J[1;32mopenai[0m*        [J[1;32mpip3[0m*          [J[1;36mpython[0m@        [J[1;36mpython3.11[0m@    [J[1;32mtqdm[0m*          [J                                       [A[A[0m[27m[24m[2C[32msource[39m .venv/bin/Activate.ps1[K[108C [01;37m[[01;34m33d0d60[01;37m][00m[118D
-[7mActivate.ps1 [0m  [7mActivate.ps1 [0m  [A[0m[27m[24m[2C[32msource[39m .venv/bin/Activate.ps1[K[108C [01;37m[[01;34m33d0d60[01;37m][00m[118D[12Da[7C    
-[0mActivate.ps1   [1B[7mactivate     [0m  [A[A[0m[27m[24m[2C[32msource[39m .venv/bin/activate[K[112C [01;37m[[01;34m33d0d60[01;37m][00m[122D
-[J[A[27C[1m [0m[19D[4m.[4mv[4me[4mn[4mv[4m/[4mb[4mi[4mn[4m/[4ma[4mc[4mt[4mi[4mv[4ma[4mt[4me[24m[1C[0m [?1l>[?2004l
-[J]2;source .venv/bin/activate]1;source[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32msource[39m [4m.venv/bin/activate[24m[25D[32mp[32my[32mt[32mh[32mo[32mn[32m3[39m[24m [4mm[4ma[4mi[4mn[4m.[4mp[4my[24m[24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [10D[?1l>[?2004l
-]2;python3 main.py]1;python3Traceback (most recent call last):
-  File "/Users/matthias/Documents/private/eggshell/main.py", line 2, in <module>
-    import eggshell.eggshell as eggshell
-  File "/Users/matthias/Documents/private/eggshell/eggshell/eggshell.py", line 4, in <module>
-    import eggshell.recordings as recordings
-  File "/Users/matthias/Documents/private/eggshell/eggshell/recordings.py", line 3, in <module>
-    from ansicolors import strip_color
-ModuleNotFoundError: No module named 'ansicolors'
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m [4mmain.py[24m[15D[32ms[32mo[32mu[32mr[32mc[32me[39m[39m [4m.[4mv[4me[4mn[4mv[4m/[4mb[4mi[4mn/activate[24m[25D[32mp[32my[32mt[32mh[32mo[32mn[32m3[39m[24m [4mm[4ma[4mi[4mn[4m.[4mp[4my[24m[24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [10D[24me[24mg[24mg[24ms[24mh[24me[24mll/main.py[24D[32ml[32ms[39m[39m [39m [39m [39m [39m                  [22D[32m.[32m/[32meggshell.sh[39m[13D[32mm[32ma[32mn[39m[39m [39ms[39mc[39mr[39mi[39mp[39mt[39m [39m [39m [10D[32m.[32m/[32me[32mg[32mg[32ms[32mh[32me[32ml[32ml[32m.sh[39m[13D[32ml[32ms[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [11D[32mp[32my[32mthon3[39m eggshell/main.py[16D[4mm[4ma[4mi[4mn[4m.[4mp[4my[24m         [9D[15D[32ms[32mo[32mu[32mr[32mc[32me[39m[39m [4m.[4mv[4me[4mn[4mv[4m/[4mb[4mi[4mn/activate[24m[25D[32mp[32my[32mt[32mh[32mo[32mn[32m3[39m[24m [4mm[4ma[4mi[4mn[4m.[4mp[4my[24m[24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [10D[15D[39m [39m [39m [39m [39m [39m [39m  [24m [24m [24m [24m [24m [24m [24m [15D[32mp[39m[1m[31mp[1m[31mi[0m[39m[0m[32mp[0m[32mi[32mp[39m install ansicolors[?1l>[?2004l
-]2;noglob pip install ansicolors]1;pipRequirement already satisfied: ansicolors in ./.venv/lib/python3.11/site-packages (1.1.8)
-
-[1m[[0m[34;49mnotice[0m[1;39;49m][0m[39;49m A new release of pip is available: [0m[31;49m23.2.1[0m[39;49m -> [0m[32;49m23.3.1[0m
-[1m[[0m[34;49mnotice[0m[1;39;49m][0m[39;49m To update, run: [0m[32;49mpip install --upgrade pip[0m
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpip[39m install ansicolorsrinstall ansicolors[18Deinstall ansicolors[18D[?1l>[?2004l
-]2;noglob pip reinstall ansicolors]1;pipERROR: unknown command "reinstall" - maybe you meant "install"
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[?1l>[?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpip[39m reinstall ansicolors[20Dinstall ansicolors  [22D[32mp[32my[32mt[32mh[32mo[32mn[32m3[39m [4mm[4ma[4mi[4mn[4m.[4mp[4my[24m       [15D[32ms[32mo[32mu[32mr[32mc[32me[39m[39m [4m.[4mv[4me[4mn[4mv[4m/[4mb[4mi[4mn/activate[24m[25D[32mp[32my[32mt[32mh[32mo[32mn[32m3[39m[24m [4mm[4ma[4mi[4mn[4m.[4mp[4my[24m[24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [10D[?1l>[?2004l
-]2;python3 main.py]1;python3Traceback (most recent call last):
-  File "/Users/matthias/Documents/private/eggshell/main.py", line 19, in <module>
-    main()
-  File "/Users/matthias/Documents/private/eggshell/main.py", line 8, in main
-    parser.add_argument(
-  File "/usr/local/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python3.11/argparse.py", line 1450, in add_argument
-    action = action_class(**kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^
-TypeError: _StoreTrueAction.__init__() got an unexpected keyword argument 'type'
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m [4mmain.py[24m[?1l>[?2004l
-]2;python3 main.py]1;python3usage: main.py [-h] [-c] prompt
-main.py: error: the following arguments are required: prompt
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[4me[24m[24m[1m[31me[1m[31mc[0m[39m[1m[31me[1m[31mc[1m[31mh[0m[39m[0m[32me[0m[32mc[0m[32mh[32mo[39m $$[?1l>[?2004l
-]2;echo $$]1;echo82792
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mecho[39m $$[32mp[32my[32mt[32mh[32mo[32mn[32m3[39m [4mmain.py[24m [33m"[39m[33m"[33m"[39m[33mw[33m"[39m[33mh[33m"[39m[33ma[33m"[39m[33mt[33m"[39m[33ms[33m"[39m[33m [33m"[39m[33mt[33m"[39m[33mh[33m"[39m[33me[33m"[39m[33m [33m"[39m[33mw[33m"[39m[33me[33m"[39m[33ma[33m"[39m[33mt[33m"[39m[33mh[33m"[39m[33me[33m"[39m[33mr[33m"[39m[33m [33m"[39m[33ml[33m"[39m[33mi[33m"[39m[33mk[33m"[39m[33me[33m"[39m[33m [33m"[39m[33mi[33m"[39m[33mn[33m"[39m[33m [33m"[39m[33mV[33m"[39m[33mi[33m"[39m[33me[33m"[39m[33ma[33m"[39m[33m"[39m[39m [33mn[33m"[39m[33mn[33m"[39m[33ma[33m"[39m[33m?[33m"[39m[?1l>[?2004l
-]2;python3 main.py "whats the weather like in Vienna?"]1;python3Traceback (most recent call last):
-  File "/Users/matthias/Documents/private/eggshell/main.py", line 17, in <module>
-    main()
-  File "/Users/matthias/Documents/private/eggshell/main.py", line 13, in main
-    eggshell.eggshell(args)
-  File "/Users/matthias/Documents/private/eggshell/eggshell/eggshell.py", line 19, in eggshell
-    if args["clear"]:
-       ~~~~^^^^^^^^^
-TypeError: 'Namespace' object is not subscriptable
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m [4mmain.py[24m [33m"whats the weather like in Vienna?"[39m[?1l>[?2004l
-]2;python3 main.py "whats the weather like in Vienna?"]1;python3Traceback (most recent call last):
-  File "/Users/matthias/Documents/private/eggshell/main.py", line 19, in <module>
-    main()
-  File "/Users/matthias/Documents/private/eggshell/main.py", line 15, in main
-    eggshell.eggshell(args)
-  File "/Users/matthias/Documents/private/eggshell/eggshell/eggshell.py", line 25, in eggshell
-    generated_command = generate.generate_next(
-                        ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/matthias/Documents/private/eggshell/eggshell/generate.py", line 95, in generate_next
-    args = json.load(function_call.arguments)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 293, in load
-    return loads(fp.read(),
-                 ^^^^^^^
-AttributeError: 'str' object has no attribute 'read'
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m [4mmain.py[24m [33m"whats the weather like in Vienna?"[39m[?1l>[?2004l
-]2;python3 main.py "whats the weather like in Vienna?"]1;python3[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m [4mmain.py[24m [33m"whats the weather like in Vienna?"[39m[?1l>[?2004l
-]2;python3 main.py "whats the weather like in Vienna?"]1;python32023-10-27 08:40:07,526 - openai - DEBUG - message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
-2023-10-27 08:40:07,527 - openai - DEBUG - api_version=None data='{"model": "gpt-4", "messages": [{"role": "system", "content": "\\n            You are the AI backend for an AI powered terminal. \\n            You receive a recording of a shell and additionally a natural language request, and you must figure out an executable bash command that gets the request done or explain something about the output.\\n            Only ever respond with a function call to either the explain or suggest_command function.\\n            "}, {"role": "user", "content": "whats the weather like in Vienna?"}], "max_tokens": 1000, "n": 1, "stop": null, "temperature": 0.5, "functions": [{"description": "This function explains something to the user.", "name": "explain", "parameters": {"type": "object", "required": ["explanation"], "properties": {"explanation": {"type": "string", "description": "The explanation."}}}}, {"description": "This function shows a command to the user to be executed on the command line.", "name": "suggest_command", "parameters": {"type": "object", "required": ["command"], "properties": {"command": {"type": "string", "description": "The command to be executed."}}}}]}' message='Post details'
-2023-10-27 08:40:07,527 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
-2023-10-27 08:40:07,709 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.openai.com:443
-2023-10-27 08:40:11,870 - urllib3.connectionpool - DEBUG - https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
-2023-10-27 08:40:11,871 - openai - DEBUG - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=3465 request_id=769e72ea258a1635f8652409dfb45b03 response_code=200
-2023-10-27 08:40:11,875 - eggshell - DEBUG - {
-  "id": "chatcmpl-8EJEOArD9Q8CCYOlpK8pQrYeEh7dT",
-  "object": "chat.completion",
-  "created": 1698421208,
-  "model": "gpt-4-0613",
-  "choices": [
-    {
-      "index": 0,
-      "message": {
-        "role": "assistant",
-        "content": null,
-        "function_call": {
-          "name": "suggest_command",
-          "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-        }
-      },
-      "finish_reason": "function_call"
-    }
-  ],
-  "usage": {
-    "prompt_tokens": 166,
-    "completion_tokens": 22,
-    "total_tokens": 188
-  }
-}
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[?1l>[?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m [4mmain.py[24m [33m"whats the weather like in Vienna?"[39m[51D[32me[32mc[32mh[32mo[39m[39m [39m$[39m$ [24m [24m [24m [24m [24m [24m [24m  [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [44D[32mp[32my[32mt[32mh[32mo[32mn[32m3[39m [4mmain.py[24m [33m"whats the weather like in Vienna?"[39m[?1l>[?2004l
-]2;python3 main.py "whats the weather like in Vienna?"]1;python32023-10-27 08:41:13,240 - openai - DEBUG - message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
-2023-10-27 08:41:13,240 - openai - DEBUG - api_version=None data='{"model": "gpt-4", "messages": [{"role": "system", "content": "\\n            You are the AI backend for an AI powered terminal. \\n            You receive a recording of a shell and additionally a natural language request, and you must figure out an executable bash command that gets the request done or explain something about the output.\\n            Only ever respond with a function call to either the explain or suggest_command function.\\n            "}, {"role": "user", "content": "whats the weather like in Vienna?"}], "max_tokens": 1000, "n": 1, "stop": null, "temperature": 0.5, "functions": [{"description": "This function explains something to the user.", "name": "explain", "parameters": {"type": "object", "required": ["explanation"], "properties": {"explanation": {"type": "string", "description": "The explanation."}}}}, {"description": "This function shows a command to the user to be executed on the command line.", "name": "suggest_command", "parameters": {"type": "object", "required": ["command"], "properties": {"command": {"type": "string", "description": "The command to be executed."}}}}]}' message='Post details'
-2023-10-27 08:41:13,240 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
-2023-10-27 08:41:13,250 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.openai.com:443
-2023-10-27 08:41:16,381 - urllib3.connectionpool - DEBUG - https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
-2023-10-27 08:41:16,382 - openai - DEBUG - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=2765 request_id=cd3e0e6aa4c6994c42aacd92793e3808 response_code=200
-2023-10-27 08:41:16,384 - eggshell - DEBUG - {
-  "id": "chatcmpl-8EJFRQkZFgLiabqNT5ZggfsYvGwBf",
-  "object": "chat.completion",
-  "created": 1698421273,
-  "model": "gpt-4-0613",
-  "choices": [
-    {
-      "index": 0,
-      "message": {
-        "role": "assistant",
-        "content": null,
-        "function_call": {
-          "name": "suggest_command",
-          "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-        }
-      },
-      "finish_reason": "function_call"
-    }
-  ],
-  "usage": {
-    "prompt_tokens": 166,
-    "completion_tokens": 22,
-    "total_tokens": 188
-  }
-}
-2023-10-27 08:41:16,384 - eggshell - DEBUG - {
-  "index": 0,
-  "message": {
-    "role": "assistant",
-    "content": null,
-    "function_call": {
-      "name": "suggest_command",
-      "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-    }
-  },
-  "finish_reason": "function_call"
-}
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m [4mmain.py[24m [33m"whats the weather like in Vienna?"[39m[?1l>[?2004l
-]2;python3 main.py "whats the weather like in Vienna?"]1;python32023-10-27 08:42:41,930 - openai - DEBUG - message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
-2023-10-27 08:42:41,930 - openai - DEBUG - api_version=None data='{"model": "gpt-4", "messages": [{"role": "system", "content": "\\n            You are the AI backend for an AI powered terminal. \\n            You receive a recording of a shell and additionally a natural language request, and you must figure out an executable bash command that gets the request done or explain something about the output.\\n            Only ever respond with a function call to either the explain or suggest_command function.\\n            "}, {"role": "user", "content": "whats the weather like in Vienna?"}], "max_tokens": 1000, "n": 1, "stop": null, "temperature": 0.5, "functions": [{"description": "This function explains something to the user.", "name": "explain", "parameters": {"type": "object", "required": ["explanation"], "properties": {"explanation": {"type": "string", "description": "The explanation."}}}}, {"description": "This function shows a command to the user to be executed on the command line.", "name": "suggest_command", "parameters": {"type": "object", "required": ["command"], "properties": {"command": {"type": "string", "description": "The command to be executed."}}}}]}' message='Post details'
-2023-10-27 08:42:41,930 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
-2023-10-27 08:42:41,975 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.openai.com:443
-2023-10-27 08:42:45,059 - urllib3.connectionpool - DEBUG - https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
-2023-10-27 08:42:45,060 - openai - DEBUG - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=2840 request_id=cc9eb44a5298874db8196e30d360bf6f response_code=200
-2023-10-27 08:42:45,062 - eggshell - DEBUG - {
-  "id": "chatcmpl-8EJGsmweEEnv9NMyy3XEegFevJKKG",
-  "object": "chat.completion",
-  "created": 1698421362,
-  "model": "gpt-4-0613",
-  "choices": [
-    {
-      "index": 0,
-      "message": {
-        "role": "assistant",
-        "content": null,
-        "function_call": {
-          "name": "suggest_command",
-          "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-        }
-      },
-      "finish_reason": "function_call"
-    }
-  ],
-  "usage": {
-    "prompt_tokens": 166,
-    "completion_tokens": 22,
-    "total_tokens": 188
-  }
-}
-2023-10-27 08:42:45,062 - eggshell - DEBUG - {
-  "index": 0,
-  "message": {
-    "role": "assistant",
-    "content": null,
-    "function_call": {
-      "name": "suggest_command",
-      "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-    }
-  },
-  "finish_reason": "function_call"
-}
-2023-10-27 08:42:45,063 - eggshell - DEBUG - Generated command: {'args': {'command': 'curl wttr.in/Vienna'}}
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m [4mmain.py[24m [33m"whats the weather like in Vienna?"[39m[?1l>[?2004l
-]2;python3 main.py "whats the weather like in Vienna?"]1;python32023-10-27 08:54:34,934 - openai - DEBUG - message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
-2023-10-27 08:54:34,934 - openai - DEBUG - api_version=None data='{"model": "gpt-4", "messages": [{"role": "system", "content": "\\n            You are the AI backend for an AI powered terminal. \\n            You receive a recording of a shell and additionally a natural language request, and you must figure out an executable bash command that gets the request done or explain something about the output.\\n            Only ever respond with a function call to either the explain or suggest_command function.\\n            "}, {"role": "user", "content": "whats the weather like in Vienna?"}], "max_tokens": 1000, "n": 1, "stop": null, "temperature": 0.5, "functions": [{"description": "This function explains something to the user.", "name": "explain", "parameters": {"type": "object", "required": ["explanation"], "properties": {"explanation": {"type": "string", "description": "The explanation."}}}}, {"description": "This function shows a command to the user to be executed on the command line.", "name": "suggest_command", "parameters": {"type": "object", "required": ["command"], "properties": {"command": {"type": "string", "description": "The command to be executed."}}}}]}' message='Post details'
-2023-10-27 08:54:34,935 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
-2023-10-27 08:54:35,015 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.openai.com:443
-2023-10-27 08:54:38,575 - urllib3.connectionpool - DEBUG - https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
-2023-10-27 08:54:38,576 - openai - DEBUG - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=3168 request_id=e912f979b0199a2d1d336e327ffd554b response_code=200
-2023-10-27 08:54:38,579 - eggshell - DEBUG - {
-  "id": "chatcmpl-8EJSNqJOCpdmrhXhGGNJ5NoryUTA5",
-  "object": "chat.completion",
-  "created": 1698422075,
-  "model": "gpt-4-0613",
-  "choices": [
-    {
-      "index": 0,
-      "message": {
-        "role": "assistant",
-        "content": null,
-        "function_call": {
-          "name": "suggest_command",
-          "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-        }
-      },
-      "finish_reason": "function_call"
-    }
-  ],
-  "usage": {
-    "prompt_tokens": 166,
-    "completion_tokens": 22,
-    "total_tokens": 188
-  }
-}
-2023-10-27 08:54:38,579 - eggshell - DEBUG - {
-  "index": 0,
-  "message": {
-    "role": "assistant",
-    "content": null,
-    "function_call": {
-      "name": "suggest_command",
-      "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-    }
-  },
-  "finish_reason": "function_call"
-}
-2023-10-27 08:54:38,580 - eggshell - DEBUG - Generated command: SuggestCommandFunctionCall(args=SuggestCommandArguments(command='curl wttr.in/Vienna'))
-Traceback (most recent call last):
-  File "/Users/matthias/Documents/private/eggshell/main.py", line 19, in <module>
-    main()
-  File "/Users/matthias/Documents/private/eggshell/main.py", line 15, in main
-    eggshell.eggshell(args)
-  File "/Users/matthias/Documents/private/eggshell/eggshell/eggshell.py", line 35, in eggshell
-    command = generated_command.args["command"]
-              ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
-TypeError: 'SuggestCommandArguments' object is not subscriptable
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;31mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m [4mmain.py[24m [33m"whats the weather like in Vienna?"[39m[?1l>[?2004l
-]2;python3 main.py "whats the weather like in Vienna?"]1;python32023-10-27 08:54:56,932 - openai - DEBUG - message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
-2023-10-27 08:54:56,932 - openai - DEBUG - api_version=None data='{"model": "gpt-4", "messages": [{"role": "system", "content": "\\n            You are the AI backend for an AI powered terminal. \\n            You receive a recording of a shell and additionally a natural language request, and you must figure out an executable bash command that gets the request done or explain something about the output.\\n            Only ever respond with a function call to either the explain or suggest_command function.\\n            "}, {"role": "user", "content": "whats the weather like in Vienna?"}], "max_tokens": 1000, "n": 1, "stop": null, "temperature": 0.5, "functions": [{"description": "This function explains something to the user.", "name": "explain", "parameters": {"type": "object", "required": ["explanation"], "properties": {"explanation": {"type": "string", "description": "The explanation."}}}}, {"description": "This function shows a command to the user to be executed on the command line.", "name": "suggest_command", "parameters": {"type": "object", "required": ["command"], "properties": {"command": {"type": "string", "description": "The command to be executed."}}}}]}' message='Post details'
-2023-10-27 08:54:56,933 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
-2023-10-27 08:54:56,942 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.openai.com:443
-2023-10-27 08:55:00,756 - urllib3.connectionpool - DEBUG - https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
-2023-10-27 08:55:00,757 - openai - DEBUG - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=3513 request_id=730293b1c51ecd000be5d49d456d7e62 response_code=200
-2023-10-27 08:55:00,759 - eggshell - DEBUG - {
-  "id": "chatcmpl-8EJSjRTlbQov4xxfa7dec3Jd7lcL4",
-  "object": "chat.completion",
-  "created": 1698422097,
-  "model": "gpt-4-0613",
-  "choices": [
-    {
-      "index": 0,
-      "message": {
-        "role": "assistant",
-        "content": null,
-        "function_call": {
-          "name": "suggest_command",
-          "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-        }
-      },
-      "finish_reason": "function_call"
-    }
-  ],
-  "usage": {
-    "prompt_tokens": 166,
-    "completion_tokens": 22,
-    "total_tokens": 188
-  }
-}
-2023-10-27 08:55:00,759 - eggshell - DEBUG - {
-  "index": 0,
-  "message": {
-    "role": "assistant",
-    "content": null,
-    "function_call": {
-      "name": "suggest_command",
-      "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-    }
-  },
-  "finish_reason": "function_call"
-}
-2023-10-27 08:55:00,760 - eggshell - DEBUG - Generated command: SuggestCommandFunctionCall(args=SuggestCommandArguments(command='curl wttr.in/Vienna'))
-2023-10-27 08:55:00,793 - asyncio - DEBUG - Using selector: KqueueSelector
-[6n[?2004h[?1l[?25l[0m[?7l[0m[J[0;38;5;67m?[0;1m execute: curl wttr.in/Vienna [0m(Y/n)[36D[37C[?7h[0m[?12l[?25h[?25l[?7l[?7h[0m[?12l[?25h[?25l[?7l[37D[0m[J[0;38;5;67m?[0;1m execute: curl wttr.in/Vienna [0;38;5;214;1mYes[34D[0m
-[J[?7h[0m[?12l[?25h[?2004lWeather report: Vienna
-
-  [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;118m+57[0m([38;5;082m53[0m) °F[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;196m20[0m mph[0m       
-  [38;5;226m     `-’     [0m 6 mi[0m           
-  [38;5;226m    /   \    [0m 0.0 in[0m         
-                                                       ┌─────────────┐                                                       
-┌──────────────────────────────┬───────────────────────┤  Fri 27 Oct ├───────────────────────┬──────────────────────────────┐
-│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
-├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
-│ [38;5;240;1m     .-.     [0m Moderate rain  │ [38;5;250m     .-.     [0m Light rain     │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m   \  /[0m       Partly cloudy  │
-│ [38;5;240;1m    (   ).   [0m [38;5;082m+53[0m([38;5;082m50[0m) °F[0m     │ [38;5;250m    (   ).   [0m [38;5;082m+53[0m([38;5;082m50[0m) °F[0m     │ [38;5;226m     .-.     [0m [38;5;082m+53[0m([38;5;082m50[0m) °F[0m     │ [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;082m+51[0m([38;5;046m48[0m) °F[0m     │
-│ [38;5;240;1m   (___(__)  [0m [1m→[0m [38;5;220m11[0m-[38;5;208m15[0m mph[0m    │ [38;5;250m   (___(__)  [0m [1m→[0m [38;5;208m16[0m-[38;5;196m21[0m mph[0m    │ [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;208m14[0m-[38;5;196m23[0m mph[0m    │ [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;220m11[0m-[38;5;202m19[0m mph[0m    │
-│ [38;5;21;1m  ‚‘‚‘‚‘‚‘   [0m 4 mi[0m           │ [38;5;111m    ‘ ‘ ‘ ‘  [0m 5 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m   /[38;5;250m(___(__) [0m 6 mi[0m           │
-│ [38;5;21;1m  ‚’‚’‚’‚’   [0m 0.2 in | 97%[0m   │ [38;5;111m   ‘ ‘ ‘ ‘   [0m 0.1 in | 96%[0m   │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │               0.0 in | 0%[0m    │
-└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
-                                                       ┌─────────────┐                                                       
-┌──────────────────────────────┬───────────────────────┤  Sat 28 Oct ├───────────────────────┬──────────────────────────────┐
-│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
-├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
-│               Cloudy         │ [38;5;226m   \  /[0m       Partly cloudy  │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m    \   /    [0m Clear          │
-│ [38;5;250m     .--.    [0m [38;5;118m+55[0m([38;5;082m53[0m) °F[0m     │ [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;154m60[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;082m53[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;082m+51[0m([38;5;082m50[0m) °F[0m     │
-│ [38;5;250m  .-(    ).  [0m [1m→[0m [38;5;190m7[0m-[38;5;220m9[0m mph[0m      │ [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;190m6[0m-[38;5;190m7[0m mph[0m      │ [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;118m3[0m-[38;5;190m7[0m mph[0m      │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;154m4[0m-[38;5;226m8[0m mph[0m      │
-│ [38;5;250m (___.__)__) [0m 6 mi[0m           │ [38;5;226m   /[38;5;250m(___(__) [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │
-│               0.0 in | 0%[0m    │               0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │
-└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
-                                                       ┌─────────────┐                                                       
-┌──────────────────────────────┬───────────────────────┤  Sun 29 Oct ├───────────────────────┬──────────────────────────────┐
-│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
-├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
-│ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m    \   /    [0m Clear          │
-│ [38;5;226m     .-.     [0m [38;5;082m51[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;118m59[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;118m55[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;082m53[0m °F[0m          │
-│ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;118m3[0m-[38;5;154m4[0m mph[0m      │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;226m9[0m-[38;5;220m11[0m mph[0m     │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;082m1[0m-[38;5;118m2[0m mph[0m      │ [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;118m3[0m-[38;5;190m7[0m mph[0m      │
-│ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │
-│ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │
-└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
-Location: Wien, Österreich [48.2083537,16.3725042]
-
-Follow [46m[30m@igor_chubin[0m for wttr.in updates
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[1m[31mc[0m[39m[1m[31mc[1m[31ml[0m[39m[1m[31mc[1m[31ml[1m[31me[0m[39m[1m[31me[1m[31ma[0m[39m[0m[32mc[0m[32ml[0m[32me[0m[32ma[32mr[39m[?1l>[?2004l
-]2;clear]1;clear[3J[H[2J[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mclear[39m[32mp[32my[32mt[32mh[32mo[32mn3[39m [4mmain.py[24m [33m"whats the weather like in Vienna?"[39m[?1l>[?2004l
-]2;python3 main.py "whats the weather like in Vienna?"]1;python32023-10-27 08:55:40,499 - openai - DEBUG - message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
-2023-10-27 08:55:40,499 - openai - DEBUG - api_version=None data='{"model": "gpt-4", "messages": [{"role": "system", "content": "\\n            You are the AI backend for an AI powered terminal. \\n            You receive a recording of a shell and additionally a natural language request, and you must figure out an executable bash command that gets the request done or explain something about the output.\\n            Only ever respond with a function call to either the explain or suggest_command function.\\n            "}, {"role": "user", "content": "whats the weather like in Vienna?"}], "max_tokens": 1000, "n": 1, "stop": null, "temperature": 0.5, "functions": [{"description": "This function explains something to the user.", "name": "explain", "parameters": {"type": "object", "required": ["explanation"], "properties": {"explanation": {"type": "string", "description": "The explanation."}}}}, {"description": "This function shows a command to the user to be executed on the command line.", "name": "suggest_command", "parameters": {"type": "object", "required": ["command"], "properties": {"command": {"type": "string", "description": "The command to be executed."}}}}]}' message='Post details'
-2023-10-27 08:55:40,499 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
-2023-10-27 08:55:40,675 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.openai.com:443
-2023-10-27 08:55:43,837 - urllib3.connectionpool - DEBUG - https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
-2023-10-27 08:55:43,838 - openai - DEBUG - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=2985 request_id=3c2d67b35532ce5f45f86d1083d00518 response_code=200
-2023-10-27 08:55:43,840 - eggshell - DEBUG - {
-  "id": "chatcmpl-8EJTR1LLozlSeKD4QahrKlXZz0Yt4",
-  "object": "chat.completion",
-  "created": 1698422141,
-  "model": "gpt-4-0613",
-  "choices": [
-    {
-      "index": 0,
-      "message": {
-        "role": "assistant",
-        "content": null,
-        "function_call": {
-          "name": "suggest_command",
-          "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-        }
-      },
-      "finish_reason": "function_call"
-    }
-  ],
-  "usage": {
-    "prompt_tokens": 166,
-    "completion_tokens": 22,
-    "total_tokens": 188
-  }
-}
-2023-10-27 08:55:43,841 - eggshell - DEBUG - {
-  "index": 0,
-  "message": {
-    "role": "assistant",
-    "content": null,
-    "function_call": {
-      "name": "suggest_command",
-      "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-    }
-  },
-  "finish_reason": "function_call"
-}
-2023-10-27 08:55:43,841 - eggshell - DEBUG - Generated command: SuggestCommandFunctionCall(args=SuggestCommandArguments(command='curl wttr.in/Vienna'))
-2023-10-27 08:55:43,856 - asyncio - DEBUG - Using selector: KqueueSelector
-[6n[?2004h[?1l[?25l[0m[?7l[0m[J[0;38;5;67m?[0;1m execute: curl wttr.in/Vienna [0m(Y/n)[36D[37C[?7h[0m[?12l[?25h[?25l[?7l[?7h[0m[?12l[?25h[?25l[?7l[37D[0m[J[0;38;5;67m?[0;1m execute: curl wttr.in/Vienna [0;38;5;214;1mYes[34D[0m
-[J[?7h[0m[?12l[?25h[?2004lWeather report: Vienna
-
-  [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;118m+57[0m([38;5;082m53[0m) °F[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;196m20[0m mph[0m       
-  [38;5;226m     `-’     [0m 6 mi[0m           
-  [38;5;226m    /   \    [0m 0.0 in[0m         
-                                                       ┌─────────────┐                                                       
-┌──────────────────────────────┬───────────────────────┤  Fri 27 Oct ├───────────────────────┬──────────────────────────────┐
-│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
-├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
-│ [38;5;240;1m     .-.     [0m Moderate rain  │ [38;5;250m     .-.     [0m Light rain     │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m   \  /[0m       Partly cloudy  │
-│ [38;5;240;1m    (   ).   [0m [38;5;082m+53[0m([38;5;082m50[0m) °F[0m     │ [38;5;250m    (   ).   [0m [38;5;082m+53[0m([38;5;082m50[0m) °F[0m     │ [38;5;226m     .-.     [0m [38;5;082m+53[0m([38;5;082m50[0m) °F[0m     │ [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;082m+51[0m([38;5;046m48[0m) °F[0m     │
-│ [38;5;240;1m   (___(__)  [0m [1m→[0m [38;5;220m11[0m-[38;5;208m15[0m mph[0m    │ [38;5;250m   (___(__)  [0m [1m→[0m [38;5;208m16[0m-[38;5;196m21[0m mph[0m    │ [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;208m14[0m-[38;5;196m23[0m mph[0m    │ [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;220m11[0m-[38;5;202m19[0m mph[0m    │
-│ [38;5;21;1m  ‚‘‚‘‚‘‚‘   [0m 4 mi[0m           │ [38;5;111m    ‘ ‘ ‘ ‘  [0m 5 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m   /[38;5;250m(___(__) [0m 6 mi[0m           │
-│ [38;5;21;1m  ‚’‚’‚’‚’   [0m 0.2 in | 97%[0m   │ [38;5;111m   ‘ ‘ ‘ ‘   [0m 0.1 in | 96%[0m   │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │               0.0 in | 0%[0m    │
-└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
-                                                       ┌─────────────┐                                                       
-┌──────────────────────────────┬───────────────────────┤  Sat 28 Oct ├───────────────────────┬──────────────────────────────┐
-│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
-├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
-│               Cloudy         │ [38;5;226m   \  /[0m       Partly cloudy  │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m    \   /    [0m Clear          │
-│ [38;5;250m     .--.    [0m [38;5;118m+55[0m([38;5;082m53[0m) °F[0m     │ [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;154m60[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;082m53[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;082m+51[0m([38;5;082m50[0m) °F[0m     │
-│ [38;5;250m  .-(    ).  [0m [1m→[0m [38;5;190m7[0m-[38;5;220m9[0m mph[0m      │ [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;190m6[0m-[38;5;190m7[0m mph[0m      │ [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;118m3[0m-[38;5;190m7[0m mph[0m      │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;154m4[0m-[38;5;226m8[0m mph[0m      │
-│ [38;5;250m (___.__)__) [0m 6 mi[0m           │ [38;5;226m   /[38;5;250m(___(__) [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │
-│               0.0 in | 0%[0m    │               0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │
-└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
-                                                       ┌─────────────┐                                                       
-┌──────────────────────────────┬───────────────────────┤  Sun 29 Oct ├───────────────────────┬──────────────────────────────┐
-│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
-├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
-│ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m    \   /    [0m Clear          │
-│ [38;5;226m     .-.     [0m [38;5;082m51[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;118m59[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;118m55[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;082m53[0m °F[0m          │
-│ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;118m3[0m-[38;5;154m4[0m mph[0m      │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;226m9[0m-[38;5;220m11[0m mph[0m     │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;082m1[0m-[38;5;118m2[0m mph[0m      │ [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;118m3[0m-[38;5;190m7[0m mph[0m      │
-│ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │
-│ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │
-└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
-Location: Wien, Österreich [48.2083537,16.3725042]
-
-Follow [46m[30m@igor_chubin[0m for wttr.in updates
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[1m[31mc[0m[39m[1m[31mc[1m[31ml[0m[39m[1m[31mc[1m[31ml[1m[31me[0m[39m[1m[31me[1m[31ma[0m[39m[0m[32mc[0m[32ml[0m[32me[0m[32ma[32mr[39m[?1l>[?2004l
-]2;clear]1;clear[3J[H[2J[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mclear[39m[32mp[32my[32mt[32mh[32mo[32mn3[39m [4mmain.py[24m [33m"whats the weather like in Vienna?"[39m[?1l>[?2004l
-]2;python3 main.py "whats the weather like in Vienna?"]1;python32023-10-27 08:56:23,918 - openai - DEBUG - message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
-2023-10-27 08:56:23,918 - openai - DEBUG - api_version=None data='{"model": "gpt-4", "messages": [{"role": "system", "content": "\\n            You are the AI backend for an AI powered terminal. \\n            You receive a recording of a shell and additionally a natural language request, and you must figure out an executable bash command that gets the request done or explain something about the output.\\n            Only ever respond with a function call to either the explain or suggest_command function.\\n            "}, {"role": "user", "content": "whats the weather like in Vienna?"}], "max_tokens": 1000, "n": 1, "stop": null, "temperature": 0.5, "functions": [{"description": "This function explains something to the user.", "name": "explain", "parameters": {"type": "object", "required": ["explanation"], "properties": {"explanation": {"type": "string", "description": "The explanation."}}}}, {"description": "This function shows a command to the user to be executed on the command line.", "name": "suggest_command", "parameters": {"type": "object", "required": ["command"], "properties": {"command": {"type": "string", "description": "The command to be executed."}}}}]}' message='Post details'
-2023-10-27 08:56:23,918 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
-2023-10-27 08:56:24,097 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.openai.com:443
-2023-10-27 08:56:28,378 - urllib3.connectionpool - DEBUG - https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
-2023-10-27 08:56:28,379 - openai - DEBUG - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=4041 request_id=5b885586840d5f3e468e9abac903fabe response_code=200
-2023-10-27 08:56:28,381 - eggshell - DEBUG - {
-  "id": "chatcmpl-8EJU8sa9Q9jx0OwXmT9liT20P1xlh",
-  "object": "chat.completion",
-  "created": 1698422184,
-  "model": "gpt-4-0613",
-  "choices": [
-    {
-      "index": 0,
-      "message": {
-        "role": "assistant",
-        "content": null,
-        "function_call": {
-          "name": "suggest_command",
-          "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-        }
-      },
-      "finish_reason": "function_call"
-    }
-  ],
-  "usage": {
-    "prompt_tokens": 166,
-    "completion_tokens": 22,
-    "total_tokens": 188
-  }
-}
-2023-10-27 08:56:28,381 - eggshell - DEBUG - {
-  "index": 0,
-  "message": {
-    "role": "assistant",
-    "content": null,
-    "function_call": {
-      "name": "suggest_command",
-      "arguments": "{\n  \"command\": \"curl wttr.in/Vienna\"\n}"
-    }
-  },
-  "finish_reason": "function_call"
-}
-2023-10-27 08:56:28,381 - eggshell - DEBUG - Generated command: SuggestCommandFunctionCall(args=SuggestCommandArguments(command='curl wttr.in/Vienna'))
-2023-10-27 08:56:28,397 - asyncio - DEBUG - Using selector: KqueueSelector
-[6n[?2004h[?1l[?25l[0m[?7l[0m[J[0;38;5;67m?[0;1m execute: curl wttr.in/Vienna [0m(Y/n)[36D[37C[?7h[0m[?12l[?25h[?25l[?7l[?7h[0m[?12l[?25h[?25l[?7l[37D[0m[J[0;38;5;67m?[0;1m execute: curl wttr.in/Vienna [0;38;5;214;1mYes[34D[0m
-[J[?7h[0m[?12l[?25h[?2004lWeather report: Vienna
-
-  [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;118m+57[0m([38;5;082m53[0m) °F[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;196m20[0m mph[0m       
-  [38;5;226m     `-’     [0m 6 mi[0m           
-  [38;5;226m    /   \    [0m 0.0 in[0m         
-                                                       ┌─────────────┐                                                       
-┌──────────────────────────────┬───────────────────────┤  Fri 27 Oct ├───────────────────────┬──────────────────────────────┐
-│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
-├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
-│ [38;5;240;1m     .-.     [0m Moderate rain  │ [38;5;250m     .-.     [0m Light rain     │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m   \  /[0m       Partly cloudy  │
-│ [38;5;240;1m    (   ).   [0m [38;5;082m+53[0m([38;5;082m50[0m) °F[0m     │ [38;5;250m    (   ).   [0m [38;5;082m+53[0m([38;5;082m50[0m) °F[0m     │ [38;5;226m     .-.     [0m [38;5;082m+53[0m([38;5;082m50[0m) °F[0m     │ [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;082m+51[0m([38;5;046m48[0m) °F[0m     │
-│ [38;5;240;1m   (___(__)  [0m [1m→[0m [38;5;220m11[0m-[38;5;208m15[0m mph[0m    │ [38;5;250m   (___(__)  [0m [1m→[0m [38;5;208m16[0m-[38;5;196m21[0m mph[0m    │ [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;208m14[0m-[38;5;196m23[0m mph[0m    │ [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;220m11[0m-[38;5;202m19[0m mph[0m    │
-│ [38;5;21;1m  ‚‘‚‘‚‘‚‘   [0m 4 mi[0m           │ [38;5;111m    ‘ ‘ ‘ ‘  [0m 5 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m   /[38;5;250m(___(__) [0m 6 mi[0m           │
-│ [38;5;21;1m  ‚’‚’‚’‚’   [0m 0.2 in | 97%[0m   │ [38;5;111m   ‘ ‘ ‘ ‘   [0m 0.1 in | 96%[0m   │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │               0.0 in | 0%[0m    │
-└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
-                                                       ┌─────────────┐                                                       
-┌──────────────────────────────┬───────────────────────┤  Sat 28 Oct ├───────────────────────┬──────────────────────────────┐
-│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
-├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
-│               Cloudy         │ [38;5;226m   \  /[0m       Partly cloudy  │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m    \   /    [0m Clear          │
-│ [38;5;250m     .--.    [0m [38;5;118m+55[0m([38;5;082m53[0m) °F[0m     │ [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;154m60[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;082m53[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;082m+51[0m([38;5;082m50[0m) °F[0m     │
-│ [38;5;250m  .-(    ).  [0m [1m→[0m [38;5;190m7[0m-[38;5;220m9[0m mph[0m      │ [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;190m6[0m-[38;5;190m7[0m mph[0m      │ [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;118m3[0m-[38;5;190m7[0m mph[0m      │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;154m4[0m-[38;5;226m8[0m mph[0m      │
-│ [38;5;250m (___.__)__) [0m 6 mi[0m           │ [38;5;226m   /[38;5;250m(___(__) [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │
-│               0.0 in | 0%[0m    │               0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │
-└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
-                                                       ┌─────────────┐                                                       
-┌──────────────────────────────┬───────────────────────┤  Sun 29 Oct ├───────────────────────┬──────────────────────────────┐
-│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
-├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
-│ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m    \   /    [0m Clear          │
-│ [38;5;226m     .-.     [0m [38;5;082m51[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;118m59[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;118m55[0m °F[0m          │ [38;5;226m     .-.     [0m [38;5;082m53[0m °F[0m          │
-│ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;118m3[0m-[38;5;154m4[0m mph[0m      │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;226m9[0m-[38;5;220m11[0m mph[0m     │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;082m1[0m-[38;5;118m2[0m mph[0m      │ [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;118m3[0m-[38;5;190m7[0m mph[0m      │
-│ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │ [38;5;226m     `-’     [0m 6 mi[0m           │
-│ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 in | 0%[0m    │
-└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
-Location: Wien, Österreich [48.2083537,16.3725042]
-
-Follow [46m[30m@igor_chubin[0m for wttr.in updates
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h[32mpython3[39m [4mmain.py[24m [33m"whats the weather like in Vienna?"[39m[33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m [33m"[39m[33mc[33m"[39m[33mu[33m"[39m[33mr[33m"[39m[33mr[33m"[39m[33me[33m"[39m[33mn[33m"[39m[33mt[33m"[39m[33m [33m"[39m[33mt[33m"[39m[33mi[33m"[39m[33mm[33m"[39m[33me[33m"[39m[33m?[33m"[39m[?1l>[?2004l
-]2;python3 main.py "whats the current time?"]1;python32023-10-27 08:56:58,603 - openai - DEBUG - message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
-2023-10-27 08:56:58,603 - openai - DEBUG - api_version=None data='{"model": "gpt-4", "messages": [{"role": "system", "content": "\\n            You are the AI backend for an AI powered terminal. \\n            You receive a recording of a shell and additionally a natural language request, and you must figure out an executable bash command that gets the request done or explain something about the output.\\n            Only ever respond with a function call to either the explain or suggest_command function.\\n            "}, {"role": "user", "content": "whats the current time?"}], "max_tokens": 1000, "n": 1, "stop": null, "temperature": 0.5, "functions": [{"description": "This function explains something to the user.", "name": "explain", "parameters": {"type": "object", "required": ["explanation"], "properties": {"explanation": {"type": "string", "description": "The explanation."}}}}, {"description": "This function shows a command to the user to be executed on the command line.", "name": "suggest_command", "parameters": {"type": "object", "required": ["command"], "properties": {"command": {"type": "string", "description": "The command to be executed."}}}}]}' message='Post details'
-2023-10-27 08:56:58,603 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
-2023-10-27 08:56:58,614 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.openai.com:443
-2023-10-27 08:57:01,107 - urllib3.connectionpool - DEBUG - https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
-2023-10-27 08:57:01,108 - openai - DEBUG - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=2210 request_id=0c530e9a17c2c6f94790aef956051541 response_code=200
-2023-10-27 08:57:01,110 - eggshell - DEBUG - {
-  "id": "chatcmpl-8EJUgx9nNfs2KaQFZ4jhH7yjLOYle",
-  "object": "chat.completion",
-  "created": 1698422218,
-  "model": "gpt-4-0613",
-  "choices": [
-    {
-      "index": 0,
-      "message": {
-        "role": "assistant",
-        "content": null,
-        "function_call": {
-          "name": "suggest_command",
-          "arguments": "{\n  \"command\": \"date\"\n}"
-        }
-      },
-      "finish_reason": "function_call"
-    }
-  ],
-  "usage": {
-    "prompt_tokens": 164,
-    "completion_tokens": 16,
-    "total_tokens": 180
-  }
-}
-2023-10-27 08:57:01,111 - eggshell - DEBUG - {
-  "index": 0,
-  "message": {
-    "role": "assistant",
-    "content": null,
-    "function_call": {
-      "name": "suggest_command",
-      "arguments": "{\n  \"command\": \"date\"\n}"
-    }
-  },
-  "finish_reason": "function_call"
-}
-2023-10-27 08:57:01,111 - eggshell - DEBUG - Generated command: SuggestCommandFunctionCall(args=SuggestCommandArguments(command='date'))
-2023-10-27 08:57:01,129 - asyncio - DEBUG - Using selector: KqueueSelector
-[6n[?2004h[?1l[?25l[0m[?7l[0m[J[0;38;5;67m?[0;1m execute: date [0m(Y/n)[21D[22C[?7h[0m[?12l[?25h[?25l[?7l[?7h[0m[?12l[?25h[?25l[?7l[22D[0m[J[0;38;5;67m?[0;1m execute: date [0;38;5;214;1mYes[19D[0m
-[J[?7h[0m[?12l[?25h[?2004lFri Oct 27 08:57:04 PDT 2023
-[1m[7m%[27m[1m[0m                                                                                                                                                      ]2;matthias@Matthiass-MacBook-Pro: ~/Documents/private/eggshell]1;..vate/eggshell[0m[27m[24m[J(.venv) 
-[01;32mλ [01;33mmatthias [22;35m[Documents/private/eggshell] at [34m main[00m [01;31m-[01;34m![01;36m?
-[01;36m→ [00m[K[137C [01;37m[[01;34m33d0d60[01;37m][00m[147D[?1h=[?2004h
