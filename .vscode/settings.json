@@ -7,5 +7,5 @@
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
-  "cSpell.words": ["ansicolors", "pids", "psutil"]
+  "cSpell.words": ["ansicolors", "openai", "pids", "psutil"]
 }

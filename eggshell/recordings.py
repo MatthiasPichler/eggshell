@@ -1,6 +1,6 @@
 import psutil
 import os
-from ansicolors import strip_color
+from colors import strip_color
 import eggshell.config as config
 
 

@@ -1,8 +1,11 @@
 import os
 import sys
-from eggshell import ai
+import eggshell.generate as generate
 import eggshell.recordings as recordings
 import eggshell.sessions as sessions
+from eggshell.log import logger
+import questionary
+import subprocess
 
 
 def eggshell(args):
@@ -14,17 +17,21 @@ def eggshell(args):
     if not recording_path:
         return
 
-    if args["clear"]:
+    if args.clear:
         sessions.forget_session(recording_path)
         return
 
     session = sessions.get_session(recording_path)
     prompt = " ".join(sys.argv[1:])
-    generated_command = ai.generate_next(
+    generated_command = generate.generate_next(
         prompt=prompt, recording="\n".join(session["lines"]) if session else ""
     )
 
-    if len(generated_command) > 120 and not generated_command.startswith("echo"):
-        print(generated_command)
-    else:
-        write_text(generated_command)
+    logger.debug(f"Generated command: {generated_command}")
+
+    if isinstance(generated_command, generate.ExplainFunctionCall):
+        print(generated_command.args.explanation)
+    elif isinstance(generated_command, generate.SuggestCommandFunctionCall):
+        command = generated_command.args.command
+        if questionary.confirm(f"execute: {command}").ask():
+            subprocess.run(f"exec {command}", shell=True)

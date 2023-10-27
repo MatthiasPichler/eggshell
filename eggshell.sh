@@ -2,8 +2,8 @@
 
 trim() {
   local var="$*"
-  var="${var#"${var%%[![:space:]]*}"}"   # remove leading whitespace characters
-  var="${var%"${var##*[![:space:]]}"}"   # remove trailing whitespace characters
+  var="${var#"${var%%[![:space:]]*}"}" # remove leading whitespace characters
+  var="${var%"${var##*[![:space:]]}"}" # remove trailing whitespace characters
   echo -n "$var"
 }
 
@@ -21,5 +21,15 @@ while [ $pid -ne 1 ]; do
 done
 
 if [ $found -eq 0 ]; then
-  script -fq $EGGSHELL_PATH/.recordings/$$.txt
+  if [[ "$(uname)" == "Darwin" ]]; then
+    # macOS-specific actions
+    script -Fq $EGGSHELL_PATH/.recordings/.recording_$$.txt
+  elif [[ "$(uname)" == "Linux" ]]; then
+    # Linux-specific actions
+    script -fq $EGGSHELL_PATH/.recordings/.recording_$$.txt
+  else
+    # Handle other platforms
+    echo "Unsupported platform."
+    exit 1
+  fi
 fi
