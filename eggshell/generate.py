@@ -2,7 +2,7 @@ import openai
 import os
 import json
 from dataclasses import dataclass
-from eggshell.log import logger
+from eggshell.log import logger, trace
 
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
@@ -61,13 +61,14 @@ system_message = {
 }
 
 
+@trace
 def generate_next(
-    prompt, recording
+    prompt: str, recording: str
 ) -> ExplainFunctionCall | SuggestCommandFunctionCall:
     messages = [system_message]
 
     if recording:
-        messages.append({"role": "user", "content": recording})
+        messages.append({"role": "user", "content": str(recording)})
 
     messages.append({"role": "user", "content": prompt})
 

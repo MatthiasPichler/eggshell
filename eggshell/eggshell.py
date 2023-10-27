@@ -1,30 +1,27 @@
-import os
-import sys
 import eggshell.generate as generate
-import eggshell.recordings as recordings
 import eggshell.sessions as sessions
-from eggshell.log import logger
+from eggshell.log import logger, trace
 import questionary
 import subprocess
 
 
+@trace
 def eggshell(args):
-    current_pid = os.getpid()
-    ancestor_pids = recordings.get_ancestor_pids(current_pid)
+    if args.verbose == 1:
+        logger.setLevel("INFO")
+    elif args.verbose == 2:
+        logger.setLevel("DEBUG")
+    elif args.verbose >= 3:
+        logger.setLevel("TRACE")
 
-    recording_path = recordings.find_recording(ancestor_pids)
-
-    if not recording_path:
-        return
+    session = sessions.Session()
 
     if args.clear:
-        sessions.forget_session(recording_path)
+        session.forget()
         return
 
-    session = sessions.get_session(recording_path)
-    prompt = " ".join(sys.argv[1:])
     generated_command = generate.generate_next(
-        prompt=prompt, recording="\n".join(session["lines"]) if session else ""
+        prompt=args.prompt, recording=session.recording.recording
     )
 
     logger.debug(f"Generated command: {generated_command}")

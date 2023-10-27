@@ -7,8 +7,23 @@ def main():
         prog="Eggshell", description="Bring GTP to your CLI"
     )
 
-    parser.add_argument("-c", "--clear", action="store_true", help="Clear the session")
-    parser.add_argument("prompt", type=str, help="The prompt to generate a command for")
+    group = parser.add_mutually_exclusive_group(required=True)
+
+    group.add_argument("-c", "--clear", action="store_true", help="Clear the session")
+    group.add_argument(
+        "prompt",
+        type=str,
+        nargs="?",
+        help="The prompt to generate a command for",
+    )
+
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="count",
+        default=0,
+        help="Increase verbosity (can be used multiple times)",
+    )
 
     args = parser.parse_args()
 
