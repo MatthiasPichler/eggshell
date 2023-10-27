@@ -1,3 +1,11 @@
 {
-    "deno.enable": true
+  "python.formatting.provider": "none",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.banditEnabled": false,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "cSpell.words": ["ansicolors", "pids", "psutil"]
 }
