@@ -20,9 +20,26 @@ def eggshell(args):
         session.forget()
         return
 
-    generated_command = generate.generate_next(
-        prompt=args.prompt, recording=session.recording.recording
-    )
+    generated_command = None
+
+    try:
+        generated_command = generate.generate_next(
+            prompt=args.prompt, recording=session.recording.recording
+        )
+    except generate.OutputTruncated as e:
+        logger.debug(e)
+        print("The generated output was too long:")
+        print(f"{e.message}...[truncated].")
+        print("If the output is insufficient please try again.")
+        return
+    except generate.UnclearResponse as e:
+        logger.debug(e)
+        print("The AI was not able to generate a command:")
+        print(e.message)
+        print("Please try again.")
+    except Exception as e:
+        logger.error(e)
+        exit(1)
 
     logger.debug(f"Generated command: {generated_command}")
 

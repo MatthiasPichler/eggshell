@@ -27,6 +27,16 @@ class SuggestCommandFunctionCall:
     args: SuggestCommandArguments
 
 
+class OutputTruncated(Exception):
+    def __init__(self):
+        self.message = "Output too long"
+
+
+class UnclearResponse(Exception):
+    def __init__(self, message):
+        self.message = message
+
+
 explain_function = {
     "description": "This function explains something to the user.",
     "name": "explain",
@@ -98,7 +108,10 @@ def generate_next(
         raise Exception("No finish_reason found")
 
     if result.finish_reason == "length":
-        raise Exception("Output too long")
+        raise OutputTruncated()
+
+    if result.finish_reason == "stop":
+        raise UnclearResponse(result.message.content)
 
     if result.finish_reason == "function_call":
         function_call = result.message.function_call
@@ -110,7 +123,5 @@ def generate_next(
 
         if name == "suggest_command":
             return SuggestCommandFunctionCall(args=SuggestCommandArguments(**args))
-
-        raise Exception(f"Unknown function name: {name}")
 
     raise Exception(f"Unknown finish_reason: {result.finish_reason}")
