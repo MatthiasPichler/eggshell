@@ -20,13 +20,20 @@ while [ $pid -ne 1 ]; do
   pid=$(trim $(ps -o ppid= -p $pid))
 done
 
+if [$EGGSHELL_RECORDING]; then
+  # don't record if we're already recording
+  exit 0
+fi
+
+RECORDING_PATH=$EGGSHELL_PATH/.recordings/.recording_$$.txt
+
 if [ $found -eq 0 ]; then
   if [[ "$(uname)" == "Darwin" ]]; then
     # macOS-specific actions
-    script -Fq $EGGSHELL_PATH/.recordings/.recording_$$.txt
+    EGGSHELL=1 EGGSHELL_RECORDING=$RECORDING_PATH PATH="$(pwd)/bin:${PATH}" script -Fq $EGGSHELL_PATH/.recordings/.recording_$$.txt
   elif [[ "$(uname)" == "Linux" ]]; then
     # Linux-specific actions
-    script -fq $EGGSHELL_PATH/.recordings/.recording_$$.txt
+    EGGSHELL=1 EGGSHELL_RECORDING=$RECORDING_PATH PATH="$(pwd)/bin:${PATH}" script -fq $EGGSHELL_PATH/.recordings/.recording_$$.txt
   else
     # Handle other platforms
     echo "Unsupported platform."
