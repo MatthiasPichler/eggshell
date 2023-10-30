@@ -7,6 +7,8 @@ class Recording:
     pid: int
     path: str
     offset: int
+    # TODO: This should be configurable and selected better
+    max_chars: int = 100_000
 
     @staticmethod
     def _recording_path(pid):
@@ -26,11 +28,11 @@ class Recording:
 
     @property
     def recording(self):
-        with open(self.path, "r") as file:
-            file_contents = file.readlines()
-            truncated_contents = file_contents[self.offset :]
-            cleaned_contents = strip_color("\n".join(truncated_contents))
-            return cleaned_contents
+        file_contents = self.raw_recording_lines
+        truncated_contents = file_contents[self.offset :]
+        cleaned_contents = strip_color("\n".join(truncated_contents))
+        trimmed_contents = cleaned_contents[-self.max_chars :]
+        return trimmed_contents
 
     def __init__(self, pid, offset):
         self.pid = pid
