@@ -38,7 +38,11 @@ class UnclearResponse(Exception):
 
 
 explain_function = {
-    "description": "This function explains something to the user.",
+    "description": """
+        This function explains something to the user. 
+        It will be shown to them directly so you can address them directly. 
+        Do not talk about them in the third person.
+    """,
     "name": "explain",
     "parameters": {
         "type": "object",
@@ -50,7 +54,9 @@ explain_function = {
 }
 
 suggest_command_function = {
-    "description": "This function shows a command to the user to be executed on the command line.",
+    "description": """
+        This function shows a bash command to the user to be executed on the command line.
+    """,
     "name": "suggest_command",
     "parameters": {
         "type": "object",
@@ -64,9 +70,9 @@ suggest_command_function = {
 system_message = {
     "role": "system",
     "content": """
-            You are the AI backend for an AI powered terminal. 
+            You are the AI backend for an AI powered terminal called "eggshell". 
             You receive a recording of a shell and additionally a natural language request, and you must figure out an executable bash command that gets the request done or explain something about the output.
-            Only ever respond with a function call to either the explain or suggest_command function.
+            Only ever respond with a function call to either the "explain" or "suggest_command" function.
             """,
 }
 

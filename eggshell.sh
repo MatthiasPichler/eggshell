@@ -1,42 +1,36 @@
 #!/bin/bash
 
-trim() {
-  local var="$*"
-  var="${var#"${var%%[![:space:]]*}"}" # remove leading whitespace characters
-  var="${var%"${var##*[![:space:]]}"}" # remove trailing whitespace characters
-  echo -n "$var"
+log() {
+  if [ ! -z $DEBUG ]; then
+    local timestamp
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    echo "[$timestamp] DEBUG: $1"
+  fi
 }
 
-pid=$$
-found=0
-
-mkdir -p $EGGSHELL_PATH/.recordings
-
-while [ $pid -ne 1 ]; do
-  if [ -e "$EGGSHELL_PATH/.recordings/$pid.txt" ]; then
-    found=1
-    break
-  fi
-  pid=$(trim $(ps -o ppid= -p $pid))
-done
-
-if [$EGGSHELL_RECORDING]; then
+if [ ! -z $EGGSHELL ]; then
   # don't record if we're already recording
+  log "Already running in eggshell, exiting..."
   exit 0
 fi
 
-RECORDING_PATH=$EGGSHELL_PATH/.recordings/.recording_$$.txt
+TMP_DIR=$(mktemp -d)
+log "created temporary directory: $TMP_DIR"
 
-if [ $found -eq 0 ]; then
-  if [[ "$(uname)" == "Darwin" ]]; then
-    # macOS-specific actions
-    EGGSHELL=1 EGGSHELL_RECORDING=$RECORDING_PATH PATH="$(pwd)/bin:${PATH}" script -Fq $EGGSHELL_PATH/.recordings/.recording_$$.txt
-  elif [[ "$(uname)" == "Linux" ]]; then
-    # Linux-specific actions
-    EGGSHELL=1 EGGSHELL_RECORDING=$RECORDING_PATH PATH="$(pwd)/bin:${PATH}" script -fq $EGGSHELL_PATH/.recordings/.recording_$$.txt
-  else
-    # Handle other platforms
-    echo "Unsupported platform."
-    exit 1
-  fi
+# delete tmp dir on exit
+trap "rm -rf $TMP_DIR" EXIT
+
+RECORDING_PATH="${TMP_DIR}/recording.txt"
+SESSION_PATH="${TMP_DIR}/session.json"
+
+if [[ "$(uname)" == "Darwin" ]]; then
+  # macOS-specific actions
+  EGGSHELL=1 EGGSHELL_PATH=$TMP_DIR EGGSHELL_RECORDING=$RECORDING_PATH EGGSHELL_SESSION=$SESSION_PATH PATH="$(pwd)/bin:${PATH}" script -Fq $RECORDING_PATH
+elif [[ "$(uname)" == "Linux" ]]; then
+  # Linux-specific actions
+  EGGSHELL=1 EGGSHELL_PATH=$TMP_DIR EGGSHELL_RECORDING=$RECORDING_PATH EGGSHELL_SESSION=$SESSION_PATH PATH="$(pwd)/bin:${PATH}" script -fq $RECORDING_PATH
+else
+  # Handle other platforms
+  echo "Unsupported platform." >&2
+  exit 1
 fi

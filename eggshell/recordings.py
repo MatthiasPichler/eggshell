@@ -1,20 +1,16 @@
-import os
 from colors import strip_color
 import eggshell.config as config
 
 
 class Recording:
     pid: int
-    path: str
     offset: int
     # TODO: This should be configurable and selected better
     max_chars: int = 100_000
 
-    @staticmethod
-    def _recording_path(pid):
-        return os.path.join(
-            config.eggshell_path, ".recordings", f".recording_{pid}.txt"
-        )
+    @property
+    def path(self):
+        return config.eggshell_recording
 
     @property
     def raw_recording_lines(self):
@@ -37,7 +33,6 @@ class Recording:
     def __init__(self, pid, offset):
         self.pid = pid
         self.offset = offset
-        self.path = Recording._recording_path(pid)
 
     def __str__(self):
         return f"Recording(pid={self.pid}, path={self.path})"

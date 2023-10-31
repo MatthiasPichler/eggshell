@@ -7,7 +7,7 @@ __pycache__/
 # Caches and log files
 .cache/
 *.log
-.recordings
+.sessions
 
 # Virtual environment
 .venv/
