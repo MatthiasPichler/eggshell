@@ -2,6 +2,7 @@ import os
 from typing import Tuple
 from colors import strip_color
 import eggshell.config as config
+from eggshell.log import trace
 
 
 class Recording:
@@ -23,6 +24,11 @@ class Recording:
         with open(self.path, "r") as file:
             return file.read()
 
+    @property
+    def recording_size(self) -> int:
+        return os.path.getsize(self.path)
+
+    @trace
     def read_recording(self) -> Tuple[str, int]:
         with open(self.path, "r") as file:
             file.seek(self.byte_offset)

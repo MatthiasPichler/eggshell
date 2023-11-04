@@ -35,6 +35,7 @@ system_message = {
 }
 
 
+@trace
 def _gpt_message_from_session_message(message: Message):
     res = {
         "role": message.role,
@@ -82,7 +83,7 @@ def generate_next(
         raise Exception("No generated command found")
 
     result = response.choices[0]  # type: ignore
-    completion_tokens = result.usage.completion_tokens
+    completion_tokens = response.usage.completion_tokens  # type: ignore
 
     logger.debug(result)
 

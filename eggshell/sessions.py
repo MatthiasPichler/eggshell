@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 import json
 from eggshell.functions import FunctionCall
+from eggshell.log import trace
 import eggshell.recordings as recordings
 import eggshell.config as config
 import sqlite3
@@ -44,24 +45,33 @@ class Session:
         )
         self.connection.commit()
 
+    def __str__(self):
+        return f"Session(path={self.path})"
+
+    def __repr__(self):
+        return str(self)
+
+    @trace
     def forget(self):
+        recording = recordings.Recording(byte_offset=0)
+
         c = self.connection.cursor()
         c.execute("BEGIN TRANSACTION")
-        res = c.execute("SELECT MAX(recording_byte_offset) FROM messages;")
-        (byte_offset,) = res.fetchone()
+
         c.execute("DELETE FROM messages;")
         c.execute(
             """
             INSERT INTO messages (role, content, recording_byte_offset) 
             VALUES ('user', 'The user cleared the history', ?);
             """,
-            (byte_offset,),
+            (recording.recording_size,),
         )
         self.connection.commit()
 
+    @trace
     def fetch_and_set_next_user_messages(self, prompt: str) -> list[Message]:
         c = self.connection.cursor()
-        res = c.execute("SELECT MAX(recording_byte_offset) FROM messages;")
+        res = c.execute("SELECT COALESCE(MAX(recording_byte_offset), 0) FROM messages;")
         (byte_offset,) = res.fetchone()
 
         recording = recordings.Recording(byte_offset=byte_offset)
@@ -93,6 +103,7 @@ class Session:
 
         return [Message(*m) for m in messages]
 
+    @trace
     def record_function_call(self, call: FunctionCall):
         c = self.connection.cursor()
 
@@ -109,6 +120,7 @@ class Session:
         )
         self.connection.commit()
 
+    @trace
     def record_function_response(self, function_name: str, response: str):
         c = self.connection.cursor()
 
