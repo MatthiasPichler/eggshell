@@ -1,3 +1,4 @@
+from typing import Literal
 import openai
 import os
 import json
@@ -21,8 +22,12 @@ class OutputTruncated(Exception):
 
 
 class UnclearResponse(Exception):
-    def __init__(self, message):
+    finish_reason: Literal["stop"] = "stop"
+    tokens: int = 0
+
+    def __init__(self, message: str, tokens: int = 0):
         self.message = message
+        self.tokens = tokens
 
 
 system_message = {
@@ -64,6 +69,8 @@ def generate_next(
 
     messages.extend([_gpt_message_from_session_message(m) for m in session_messages])
 
+    logger.debug("Generating response for messages %s", messages)
+
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=messages,
@@ -94,7 +101,7 @@ def generate_next(
         raise OutputTruncated()
 
     if result.finish_reason == "stop":
-        raise UnclearResponse(result.message.content)
+        raise UnclearResponse(result.message.content, tokens=completion_tokens)
 
     if result.finish_reason == "function_call":
         function_call = result.message.function_call

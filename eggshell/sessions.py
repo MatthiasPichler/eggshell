@@ -104,6 +104,23 @@ class Session:
         return [Message(*m) for m in messages]
 
     @trace
+    def record_other_response(self, response: str, tokens: int, finish_reason: str):
+        c = self.connection.cursor()
+
+        c.execute(
+            """
+            INSERT INTO messages (role, finish_reason, content, tokens) 
+            VALUES ('assistant', ?, ?, ?);
+            """,
+            (
+                finish_reason,
+                response,
+                tokens,
+            ),
+        )
+        self.connection.commit()
+
+    @trace
     def record_function_call(self, call: FunctionCall):
         c = self.connection.cursor()
 
