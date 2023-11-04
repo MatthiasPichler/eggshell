@@ -35,9 +35,9 @@ suggest_command_function = {
 
 @dataclass
 class FunctionCall:
-    name: str
     args: dict
     tokens: int
+    name: str
 
 
 @dataclass
