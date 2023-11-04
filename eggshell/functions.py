@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Literal
+from typing import Literal, TypedDict
 
 
 explain_function = {
@@ -40,8 +40,7 @@ class FunctionCall:
     name: str
 
 
-@dataclass
-class ExplainArguments:
+class ExplainArguments(TypedDict):
     explanation: str
 
 
@@ -51,8 +50,7 @@ class ExplainFunctionCall(FunctionCall):
     name: Literal["explain"] = "explain"
 
 
-@dataclass
-class SuggestCommandArguments:
+class SuggestCommandArguments(TypedDict):
     command: str
 
 
