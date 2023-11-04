@@ -25,3 +25,6 @@ dist/
 build/
 
 .recording
+
+# Mac OS
+.DS_Store

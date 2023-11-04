@@ -21,7 +21,7 @@ log "created temporary directory: $TMP_DIR"
 trap "rm -rf $TMP_DIR" EXIT
 
 RECORDING_PATH="${TMP_DIR}/recording.txt"
-SESSION_PATH="${TMP_DIR}/session.json"
+SESSION_PATH="${TMP_DIR}/session.db"
 
 if [[ "$(uname)" == "Darwin" ]]; then
   # macOS-specific actions

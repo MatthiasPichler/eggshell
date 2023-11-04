@@ -1,30 +1,18 @@
 import openai
 import os
 import json
-from dataclasses import dataclass
+from eggshell.functions import (
+    ExplainFunctionCall,
+    SuggestCommandFunctionCall,
+    explain_function,
+    suggest_command_function,
+    ExplainArguments,
+    SuggestCommandArguments,
+)
 from eggshell.log import logger, trace
+from eggshell.sessions import Message, Session
 
 openai.api_key = os.environ.get("OPENAI_API_KEY")
-
-
-@dataclass
-class ExplainArguments:
-    explanation: str
-
-
-@dataclass
-class ExplainFunctionCall:
-    args: ExplainArguments
-
-
-@dataclass
-class SuggestCommandArguments:
-    command: str
-
-
-@dataclass
-class SuggestCommandFunctionCall:
-    args: SuggestCommandArguments
 
 
 class OutputTruncated(Exception):
@@ -37,36 +25,6 @@ class UnclearResponse(Exception):
         self.message = message
 
 
-explain_function = {
-    "description": """
-        This function explains something to the user. 
-        It will be shown to them directly so you can address them directly. 
-        Do not talk about them in the third person.
-    """,
-    "name": "explain",
-    "parameters": {
-        "type": "object",
-        "required": ["explanation"],
-        "properties": {
-            "explanation": {"type": "string", "description": "The explanation."}
-        },
-    },
-}
-
-suggest_command_function = {
-    "description": """
-        This function shows a bash command to the user to be executed on the command line.
-    """,
-    "name": "suggest_command",
-    "parameters": {
-        "type": "object",
-        "required": ["command"],
-        "properties": {
-            "command": {"type": "string", "description": "The command to be executed."}
-        },
-    },
-}
-
 system_message = {
     "role": "system",
     "content": """
@@ -77,16 +35,33 @@ system_message = {
 }
 
 
+def _gpt_message_from_session_message(message: Message):
+    res = {
+        "role": message.role,
+        "content": message.content,
+    }
+
+    if message.finish_reason == "function_call":
+        res["function_call"] = {
+            "name": message.function_name,
+            "arguments": message.function_arguments,
+        }
+
+    if message.role == "function":
+        res["name"] = message.function_name
+
+    return res
+
+
 @trace
 def generate_next(
-    prompt: str, recording: str
+    prompt: str, session: Session
 ) -> ExplainFunctionCall | SuggestCommandFunctionCall:
     messages = [system_message]
 
-    if recording:
-        messages.append({"role": "user", "content": str(recording)})
+    session_messages = session.fetch_and_set_next_user_messages(prompt=prompt)
 
-    messages.append({"role": "user", "content": prompt})
+    messages.extend([_gpt_message_from_session_message(m) for m in session_messages])
 
     response = openai.ChatCompletion.create(
         model="gpt-4",
@@ -103,10 +78,11 @@ def generate_next(
 
     logger.debug(response)
 
-    if "choices" not in response or len(response.choices) == 0:
+    if "choices" not in response or len(response.choices) == 0:  # type: ignore
         raise Exception("No generated command found")
 
-    result = response.choices[0]
+    result = response.choices[0]  # type: ignore
+    completion_tokens = result.usage.completion_tokens
 
     logger.debug(result)
 
@@ -125,9 +101,13 @@ def generate_next(
         name = function_call.name
 
         if name == "explain":
-            return ExplainFunctionCall(args=ExplainArguments(**args))
+            return ExplainFunctionCall(
+                args=ExplainArguments(**args), tokens=completion_tokens
+            )
 
         if name == "suggest_command":
-            return SuggestCommandFunctionCall(args=SuggestCommandArguments(**args))
+            return SuggestCommandFunctionCall(
+                args=SuggestCommandArguments(**args), tokens=completion_tokens
+            )
 
     raise Exception(f"Unknown finish_reason: {result.finish_reason}")

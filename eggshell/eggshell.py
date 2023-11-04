@@ -23,9 +23,7 @@ def eggshell(args):
     generated_command = None
 
     try:
-        generated_command = generate.generate_next(
-            prompt=args.prompt, recording=session.recording.recording
-        )
+        generated_command = generate.generate_next(prompt=args.prompt, session=session)
     except generate.OutputTruncated as e:
         logger.debug(e)
         print("The generated output was too long:")
@@ -44,8 +42,26 @@ def eggshell(args):
     logger.debug(f"Generated command: {generated_command}")
 
     if isinstance(generated_command, generate.ExplainFunctionCall):
+        session.record_function_call(generated_command)
         print(generated_command.args.explanation)
+        session.record_function_response(
+            function_name=generated_command.name,
+            response=generated_command.args.explanation,
+        )
     elif isinstance(generated_command, generate.SuggestCommandFunctionCall):
+        session.record_function_call(generated_command)
         command = generated_command.args.command
-        if questionary.confirm(f"execute: {command}").ask():
+
+        should_execute = questionary.confirm(f"execute: {command}").ask()
+
+        if should_execute:
+            session.record_function_response(
+                function_name=generated_command.name,
+                response=f'Command: "{command}" was executed.',
+            )
             subprocess.run(f"exec {command}", shell=True)
+        else:
+            session.record_function_response(
+                function_name=generated_command.name,
+                response=f'Command: "{command}" was not executed.',
+            )
