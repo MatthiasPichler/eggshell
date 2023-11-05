@@ -93,9 +93,12 @@ class Session:
         )
         c.execute(
             """
-            SELECT id, finish_reason, role, content, function_name, function_arguments 
-            FROM messages 
-            ORDER BY id ASC;
+            (
+                SELECT id, finish_reason, role, content, function_name, function_arguments 
+                FROM messages 
+                ORDER BY id DESC
+                LIMIT 100
+            ) ORDER BY id ASC;
             """
         )
         messages = c.fetchall()
