@@ -9,7 +9,7 @@ def main():
 
     group = parser.add_mutually_exclusive_group(required=False)
 
-    group.add_argument("-c", "--clear", action="store_true", help="Clear the session")
+    group.add_argument("--forget", action="store_true", help="Clear the session")
     group.add_argument(
         "prompt",
         type=str,

@@ -24,7 +24,7 @@ class Eggshell:
 
     @trace
     def run(self):
-        if self.args.clear:
+        if self.args.forget:
             self.session.forget()
         else:
             self.generate()
