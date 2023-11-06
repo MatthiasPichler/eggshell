@@ -93,7 +93,8 @@ class Session:
         )
         c.execute(
             """
-            (
+            SELECT * 
+            FROM (
                 SELECT id, finish_reason, role, content, function_name, function_arguments 
                 FROM messages 
                 ORDER BY id DESC

@@ -11,16 +11,16 @@ class Recording:
     max_chars: int = 100_000
 
     @property
-    def path(self):
+    def path(self) -> str:
         return config.eggshell_recording
 
     @property
-    def _raw_recording_lines(self):
+    def _raw_recording_lines(self) -> list[str]:
         with open(self.path, "r") as file:
             return file.readlines()
 
     @property
-    def _raw_recording(self):
+    def _raw_recording(self) -> str:
         with open(self.path, "r") as file:
             return file.read()
 

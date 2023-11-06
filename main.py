@@ -1,14 +1,13 @@
 #! /usr/bin/env python3
 import argparse
-import eggshell.eggshell as eggshell
+import sys
+from eggshell.eggshell import Eggshell
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        prog="Eggshell", description="Bring GTP to your CLI"
-    )
+    parser = argparse.ArgumentParser(prog="ai", description="Bring GTP to your CLI")
 
-    group = parser.add_mutually_exclusive_group(required=True)
+    group = parser.add_mutually_exclusive_group(required=False)
 
     group.add_argument("-c", "--clear", action="store_true", help="Clear the session")
     group.add_argument(
@@ -28,7 +27,14 @@ def main():
 
     args = parser.parse_args()
 
-    eggshell.eggshell(args)
+    if not sys.stdin.isatty():
+        args.prompt = sys.stdin.read()
+    else:
+        print("How can I help:")
+        args.prompt = sys.stdin.readline().strip()
+
+    eggshell = Eggshell(args)
+    eggshell.run()
 
 
 if __name__ == "__main__":
