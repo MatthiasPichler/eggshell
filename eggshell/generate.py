@@ -1,5 +1,5 @@
 from typing import Literal
-import openai
+from openai import OpenAI
 import os
 import json
 from eggshell.functions import (
@@ -13,7 +13,7 @@ from eggshell.functions import (
 from eggshell.log import logger, trace
 from eggshell.sessions import Message, Session
 
-openai.api_key = os.environ.get("OPENAI_API_KEY")
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 
 class OutputTruncated(Exception):
@@ -75,8 +75,8 @@ def generate_next(
 
     logger.debug("Generating response for messages %s", messages)
 
-    response = openai.ChatCompletion.create(
-        model="gpt-4",
+    response = client.ChatCompletion.create(
+        model="gpt-4-1106-preview",
         messages=messages,
         max_tokens=1000,
         n=1,
