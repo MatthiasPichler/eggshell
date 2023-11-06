@@ -29,7 +29,7 @@ def main():
 
     if not sys.stdin.isatty():
         args.prompt = sys.stdin.read()
-    else:
+    elif not args.prompt:
         print("How can I help:")
         args.prompt = sys.stdin.readline().strip()
 
