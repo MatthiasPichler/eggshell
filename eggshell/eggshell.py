@@ -55,14 +55,15 @@ class Eggshell:
 
         logger.debug(f"Generated command: {generated_command}")
 
-        if isinstance(generated_command, generate.ExplainFunctionCall):
+        if isinstance(generated_command, generate.ExplainCall):
             self.session.record_function_call(generated_command)
             print(generated_command.args["explanation"])
             self.session.record_function_response(
+                tool_call_id=generated_command.id,
                 function_name=generated_command.name,
                 response=generated_command.args["explanation"],
             )
-        elif isinstance(generated_command, generate.SuggestCommandFunctionCall):
+        elif isinstance(generated_command, generate.SuggestCommandCall):
             self.session.record_function_call(generated_command)
             command = generated_command.args["command"]
 
@@ -70,12 +71,14 @@ class Eggshell:
 
             if should_execute:
                 self.session.record_function_response(
+                    tool_call_id=generated_command.id,
                     function_name=generated_command.name,
                     response=f'Command: "{command}" was executed.',
                 )
                 subprocess.run(f"exec {command}", shell=True)
             else:
                 self.session.record_function_response(
+                    tool_call_id=generated_command.id,
                     function_name=generated_command.name,
                     response=f'Command: "{command}" was not executed.',
                 )

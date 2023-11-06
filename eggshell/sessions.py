@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 import json
-from eggshell.functions import FunctionCall
+from eggshell.tools import ToolCall
 from eggshell.log import trace
 import eggshell.recordings as recordings
 import eggshell.config as config
@@ -11,11 +11,12 @@ from typing import Literal
 @dataclass
 class Message:
     id: int
-    finish_reason: Literal["stop", "length", "content_filter", "function_call"] | None
-    role: Literal["system", "user", "assistant", "function"]
+    finish_reason: Literal["stop", "length", "content_filter", "tool_calls"] | None
+    role: Literal["system", "user", "assistant", "tool"]
     content: str | None
-    function_name: str | None
-    function_arguments: str | None
+    tool_call_id: str | None
+    tool_function_name: str | None
+    tool_function_arguments: str | None
 
 
 class Session:
@@ -32,11 +33,12 @@ class Session:
             """
             CREATE TABLE IF NOT EXISTS messages(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                finish_reason TEXT CHECK(finish_reason IN ('stop', 'length', 'content_filter', 'function_call')) NULL DEFAULT NULL,
-                role TEXT CHECK(role IN ('system', 'user', 'assistant', 'function')) NOT NULL,
+                finish_reason TEXT CHECK(finish_reason IN ('stop', 'length', 'content_filter', 'tool_calls')) NULL DEFAULT NULL,
+                role TEXT CHECK(role IN ('system', 'user', 'assistant', 'tool')) NOT NULL,
                 content TEXT NULL DEFAULT NULL,
-                function_name TEXT NULL DEFAULT NULL,
-                function_arguments TEXT NULL DEFAULT NULL,
+                tool_call_id TEXT NULL DEFAULT NULL,
+                tool_function_name TEXT NULL DEFAULT NULL,
+                tool_function_arguments TEXT NULL DEFAULT NULL,
                 tokens INTEGER CHECK(tokens >= 0) NULL,
                 recording_byte_offset UNSIGNED BIG INT CHECK(tokens >= 0) NULL DEFAULT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
@@ -95,7 +97,7 @@ class Session:
             """
             SELECT * 
             FROM (
-                SELECT id, finish_reason, role, content, function_name, function_arguments 
+                SELECT id, finish_reason, role, content, tool_call_id, tool_function_name, tool_function_arguments 
                 FROM messages 
                 ORDER BY id DESC
                 LIMIT 100
@@ -125,15 +127,16 @@ class Session:
         self.connection.commit()
 
     @trace
-    def record_function_call(self, call: FunctionCall):
+    def record_function_call(self, call: ToolCall):
         c = self.connection.cursor()
 
         c.execute(
             """
-            INSERT INTO messages (role, finish_reason, function_name, function_arguments, tokens) 
-            VALUES ('assistant', 'function_call', ?, ?, ?);
+            INSERT INTO messages (role, finish_reason, tool_call_id, tool_function_name, tool_function_arguments, tokens) 
+            VALUES ('assistant', 'tool_calls',? , ?, ?, ?);
             """,
             (
+                call.id,
                 call.name,
                 json.dumps(call.args),
                 call.tokens,
@@ -142,14 +145,16 @@ class Session:
         self.connection.commit()
 
     @trace
-    def record_function_response(self, function_name: str, response: str):
+    def record_function_response(
+        self, tool_call_id: str, function_name: str, response: str
+    ):
         c = self.connection.cursor()
 
         c.execute(
             """
-            INSERT INTO messages (role, function_name, content) 
-            VALUES ('function', ?, ?);
+            INSERT INTO messages (role, tool_call_id, tool_function_name, content) 
+            VALUES ('tool', ?, ?, ?);
             """,
-            (function_name, response),
+            (tool_call_id, function_name, response),
         )
         self.connection.commit()

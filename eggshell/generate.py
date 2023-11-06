@@ -1,12 +1,19 @@
 from typing import Literal
 from openai import OpenAI
+from openai.types.chat import (
+    ChatCompletionSystemMessageParam,
+    ChatCompletionMessageParam,
+    ChatCompletionAssistantMessageParam,
+    ChatCompletionUserMessageParam,
+    ChatCompletionToolMessageParam,
+)
 import os
 import json
-from eggshell.functions import (
-    ExplainFunctionCall,
-    SuggestCommandFunctionCall,
-    explain_function,
-    suggest_command_function,
+from eggshell.tools import (
+    ExplainCall,
+    SuggestCommandCall,
+    explain_tool,
+    suggest_command_tool,
     ExplainArguments,
     SuggestCommandArguments,
 )
@@ -30,14 +37,14 @@ class UnclearResponse(Exception):
         self.tokens = tokens
 
 
-system_message = {
+system_message: ChatCompletionSystemMessageParam = {
     "role": "system",
     "content": """
             You are the AI backend for an AI powered terminal called "eggshell".
             Messages will contain a recoding of the shell session followed in the next message by the natural language request of the user.
             The recording is split between messages whenever the AI is called.
             You must figure out an executable bash command that gets the request done or explain something about the output.
-            Only ever respond with a function call to either the "explain" or "suggest_command" function.
+            Only ever respond with a tool call to either the "explain" or "suggest_command" function.
             """.replace("\t", "")
     .replace("\n", " ")
     .strip(),
@@ -45,29 +52,48 @@ system_message = {
 
 
 @trace
-def _gpt_message_from_session_message(message: Message):
-    res = {
-        "role": message.role,
-        "content": message.content,
-    }
+def _gpt_message_from_session_message(message: Message) -> ChatCompletionMessageParam:
+    if message.role == "assistant":
+        res = ChatCompletionAssistantMessageParam(
+            {
+                "role": "assistant",
+                "content": str(message.content),
+            }
+        )
 
-    if message.finish_reason == "function_call":
-        res["function_call"] = {
-            "name": message.function_name,
-            "arguments": message.function_arguments,
-        }
+        if message.finish_reason == "tool_calls":
+            res["tool_calls"] = [
+                {
+                    "id": str(message.tool_call_id),
+                    "type": "function",
+                    "function": {
+                        "name": str(message.tool_function_name),
+                        "arguments": str(message.tool_function_arguments),
+                    },
+                }
+            ]
 
-    if message.role == "function":
-        res["name"] = message.function_name
-
-    return res
+        return res
+    elif message.role == "user":
+        return ChatCompletionUserMessageParam(
+            {
+                "role": "user",
+                "content": message.content,
+            }
+        )
+    else:
+        return ChatCompletionToolMessageParam(
+            {
+                "role": "tool",
+                "content": message.content,
+                "tool_call_id": str(message.tool_call_id),
+            }
+        )
 
 
 @trace
-def generate_next(
-    prompt: str, session: Session
-) -> ExplainFunctionCall | SuggestCommandFunctionCall:
-    messages = [system_message]
+def generate_next(prompt: str, session: Session) -> ExplainCall | SuggestCommandCall:
+    messages: list[ChatCompletionMessageParam] = [system_message]
 
     session_messages = session.fetch_and_set_next_user_messages(prompt=prompt)
 
@@ -75,51 +101,46 @@ def generate_next(
 
     logger.debug("Generating response for messages %s", messages)
 
-    response = client.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-4-1106-preview",
         messages=messages,
         max_tokens=1000,
         n=1,
         stop=None,
         temperature=0.5,
-        functions=[
-            explain_function,
-            suggest_command_function,
+        tools=[
+            explain_tool,
+            suggest_command_tool,
         ],
     )
 
     logger.debug(response)
-
-    if "choices" not in response or len(response.choices) == 0:  # type: ignore
-        raise Exception("No generated command found")
 
     result = response.choices[0]  # type: ignore
     completion_tokens = response.usage.completion_tokens  # type: ignore
 
     logger.debug(result)
 
-    if "finish_reason" not in result:
-        raise Exception("No finish_reason found")
-
     if result.finish_reason == "length":
         raise OutputTruncated()
 
     if result.finish_reason == "stop":
-        raise UnclearResponse(result.message.content, tokens=completion_tokens)
+        raise UnclearResponse(str(result.message.content), tokens=completion_tokens)
 
-    if result.finish_reason == "function_call":
-        function_call = result.message.function_call
-        args = json.loads(function_call.arguments)
-        name = function_call.name
+    if result.finish_reason == "tool_calls" and result.message.tool_calls:
+        call = result.message.tool_calls[0]
+        id = call.id
+        args = json.loads(call.function.arguments)
+        name = call.function.name
 
         if name == "explain":
-            return ExplainFunctionCall(
-                args=ExplainArguments(**args), tokens=completion_tokens
+            return ExplainCall(
+                id=id, args=ExplainArguments(**args), tokens=completion_tokens
             )
 
         if name == "suggest_command":
-            return SuggestCommandFunctionCall(
-                args=SuggestCommandArguments(**args), tokens=completion_tokens
+            return SuggestCommandCall(
+                id=id, args=SuggestCommandArguments(**args), tokens=completion_tokens
             )
 
     raise Exception(f"Unknown finish_reason: {result.finish_reason}")
