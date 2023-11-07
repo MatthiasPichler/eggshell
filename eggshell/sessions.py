@@ -3,7 +3,6 @@ import json
 from eggshell.tools import ToolCall
 from eggshell.log import trace
 import eggshell.recordings as recordings
-import eggshell.config as config
 import sqlite3
 from typing import Literal
 
@@ -21,12 +20,12 @@ class Message:
 
 class Session:
     connection: sqlite3.Connection
+    path: str
+    recording_path: str
 
-    @property
-    def path(self):
-        return config.eggshell_session
-
-    def __init__(self):
+    def __init__(self, path: str, recording_path: str):
+        self.path = path
+        self.recording_path = recording_path
         self.connection = sqlite3.connect(self.path)
 
         self.connection.execute(
@@ -55,7 +54,7 @@ class Session:
 
     @trace
     def forget(self):
-        recording = recordings.Recording(byte_offset=0)
+        recording = recordings.Recording(byte_offset=0, path=self.recording_path)
 
         c = self.connection.cursor()
         c.execute("BEGIN TRANSACTION")
@@ -76,7 +75,9 @@ class Session:
         res = c.execute("SELECT COALESCE(MAX(recording_byte_offset), 0) FROM messages;")
         (byte_offset,) = res.fetchone()
 
-        recording = recordings.Recording(byte_offset=byte_offset)
+        recording = recordings.Recording(
+            byte_offset=byte_offset, path=self.recording_path
+        )
 
         (recording_content, new_byte_offset) = recording.read_recording()
 

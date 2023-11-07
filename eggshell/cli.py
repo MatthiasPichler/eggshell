@@ -38,7 +38,7 @@ parser.add_argument(
     "--api-key",
     type=str,
     help="The OpenAI API key to use",
-    default=defaults["api_key"],
+    default=os.environ.get("OPENAI_API_KEY"),
 )
 
 parser.add_argument(

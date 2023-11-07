@@ -1,7 +1,6 @@
 import os
 from typing import Tuple
 from colors import strip_color
-import eggshell.config as config
 from eggshell.log import trace
 
 
@@ -9,10 +8,7 @@ class Recording:
     byte_offset: int
     # TODO: This should be configurable and selected better
     max_chars: int = 100_000
-
-    @property
-    def path(self) -> str:
-        return config.eggshell_recording
+    path: str
 
     @property
     def _raw_recording_lines(self) -> list[str]:
@@ -39,8 +35,9 @@ class Recording:
             self.byte_offset = file.tell()
             return (trimmed_content, self.byte_offset)
 
-    def __init__(self, byte_offset: int):
+    def __init__(self, byte_offset: int, path: str):
         self.byte_offset = byte_offset
+        self.path = path
 
     def __str__(self):
         return f"Recording(path={self.path}, byte_offset={self.byte_offset}, max_chars={self.max_chars})"

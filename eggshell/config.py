@@ -3,9 +3,8 @@ import configparser
 import os
 from typing import Any, Literal, Mapping
 
-defaults: Mapping[Literal["model", "api_key"], str] = {
+defaults: Mapping[Literal["model"], str] = {
     "model": "gpt-4-1106-preview",
-    "api_key": os.environ.get("OPENAI_API_KEY", ""),
 }
 _default_config_path = os.path.expanduser("~/.eggshell/config")
 _parser_defaults: Any = defaults
@@ -16,7 +15,7 @@ class Config:
     path: str
     profile: str
     model: Literal["gpt-3.5-turbo", "gpt-4", "gpt-4-1106-preview"]
-    api_key: str
+    api_key: str | None
     recording_file_path: str
     # TODO: remove when using to assistants API
     session_db_path: str

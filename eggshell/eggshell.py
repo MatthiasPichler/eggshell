@@ -1,3 +1,4 @@
+from eggshell.config import Config
 import eggshell.generate as generate
 import eggshell.sessions as sessions
 from eggshell.log import logger, trace
@@ -9,9 +10,11 @@ from argparse import Namespace
 class Eggshell:
     session: sessions.Session
     args: Namespace
+    config: Config
 
-    def __init__(self, args):
+    def __init__(self, args: Namespace, config: Config):
         self.args = args
+        self.config = config
 
         if args.verbose == 1:
             logger.setLevel("INFO")
@@ -20,7 +23,9 @@ class Eggshell:
         elif args.verbose >= 3:
             logger.setLevel("TRACE")
 
-        self.session = sessions.Session()
+        self.session = sessions.Session(
+            path=config.session_db_path, recording_path=config.recording_file_path
+        )
 
     @trace
     def run(self):

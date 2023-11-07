@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 from eggshell.cli import parser
 import sys
+from eggshell.config import Config
 from eggshell.eggshell import Eggshell
 
 
@@ -13,7 +14,9 @@ def main():
         print("How can I help:")
         args.prompt = sys.stdin.readline().strip()
 
-    eggshell = Eggshell(args)
+    config = Config(args)
+
+    eggshell = Eggshell(args=args, config=config)
     eggshell.run()
 
 
